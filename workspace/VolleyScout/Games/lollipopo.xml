@@ -1,0 +1,30 @@
+<loki>
+  <Timestamp time="10" id="1">
+    <Aufschlag>2</Aufschlag>
+  </Timestamp>
+  <Timestamp time="30" id="2">
+    <Annahme rating="+" Laufer="1">4</Annahme>
+  </Timestamp>
+  <Timestamp time="50" id="3">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="123" id="4">
+    <Angriff rating="+" Laufer="1">4</Angriff>
+  </Timestamp>
+  <Timestamp time="234" id="5">
+    <Verteidigung rating="+">10</Verteidigung>
+  </Timestamp>
+  <Timestamp time="343" id="6">
+    <Angriff rating="/" Laufer="">4</Angriff>
+  </Timestamp>
+  <Timestamp time="1234" id="7">
+    <Annahme rating="+" Laufer="6">4</Annahme>
+  </Timestamp>
+  <Timestamp time="1455" id="8">
+    <Zuspiel rating="/">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="2355" id="9">
+    <Angriff rating="+" Laufer="6">4</Angriff>
+  </Timestamp>
+</loki>
+

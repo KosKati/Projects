@@ -1,0 +1,275 @@
+<kiki>
+  <Timestamp time="0" id="0">
+    <Aufschlag>2</Aufschlag>
+  </Timestamp>
+  <Timestamp time="0" id="0">
+    <Aufschlag>2</Aufschlag>
+  </Timestamp>
+  <Timestamp time="3103" id="1">
+    <Aufschlag>3</Aufschlag>
+  </Timestamp>
+  <Timestamp time="7000" id="2">
+    <Aufschlag>3</Aufschlag>
+  </Timestamp>
+  <Timestamp time="10481" id="3">
+    <Aufschlag>4</Aufschlag>
+  </Timestamp>
+  <Timestamp time="15806" id="4">
+    <Aufschlag>4</Aufschlag>
+  </Timestamp>
+  <Timestamp time="17503" id="5">
+    <Aufschlag>7</Aufschlag>
+  </Timestamp>
+  <Timestamp time="0" id="6">
+    <S>3</S>
+  </Timestamp>
+  <Timestamp time="0" id="7">
+    <Aufschlag>3</Aufschlag>
+  </Timestamp>
+  <Timestamp time="0" id="7">
+    <Aufschlag>3</Aufschlag>
+  </Timestamp>
+  <Timestamp time="0" id="8">
+    <Aufschlag rating="+">3</Aufschlag>
+  </Timestamp>
+  <Timestamp time="0" id="8">
+    <Aufschlag rating="+">3</Aufschlag>
+  </Timestamp>
+  <Timestamp time="0" id="8">
+    <Aufschlag rating="/">3</Aufschlag>
+  </Timestamp>
+  <Timestamp time="0" id="8">
+    <Aufschlag rating="/">3</Aufschlag>
+  </Timestamp>
+  <Timestamp time="0" id="8">
+    <Annahme rating="/">4</Annahme>
+  </Timestamp>
+  <Timestamp time="0" id="8">
+    <Annahme rating="/">4</Annahme>
+  </Timestamp>
+  <Timestamp time="0" id="9">
+    <Block rating="+">4</Block>
+    <Block rating="+">7</Block>
+  </Timestamp>
+  <Timestamp time="0" id="9">
+    <Block rating="+">4&amp;7</Block>
+  </Timestamp>
+  <Timestamp time="0" id="10">
+    <Block rating="+">4</Block>
+    <Block rating="+">7</Block>
+  </Timestamp>
+  <Timestamp time="0" id="10">
+    <Block rating="+">4&amp;7</Block>
+  </Timestamp>
+  <Timestamp time="0" id="11">
+    <Block rating="+">4</Block>
+    <Block rating="+">7</Block>
+  </Timestamp>
+  <Timestamp time="0" id="12">
+    <Block rating="+">4</Block>
+    <Block rating="+">7</Block>
+  </Timestamp>
+  <Timestamp time="0" id="12">
+    <Block rating="+">4&amp;7</Block>
+  </Timestamp>
+  <Timestamp time="0" id="13">
+    <Block rating="+">2</Block>
+    <Block rating="+">7</Block>
+  </Timestamp>
+  <Timestamp time="0" id="14">
+    <Block rating="+">2</Block>
+    <Block rating="+">10</Block>
+  </Timestamp>
+  <Timestamp time="0" id="14">
+    <Verteidigung rating="/">7</Verteidigung>
+  </Timestamp>
+  <Timestamp time="0" id="15">
+    <Block rating="+">4</Block>
+    <Block rating="+">7</Block>
+  </Timestamp>
+  <Timestamp time="0" id="15">
+    <Verteidigung rating="+">9</Verteidigung>
+  </Timestamp>
+  <Timestamp time="0" id="16">
+    <Block rating="+">7</Block>
+    <Block rating="+">9</Block>
+  </Timestamp>
+  <Timestamp time="0" id="16">
+    <Verteidigung rating="+">9</Verteidigung>
+  </Timestamp>
+  <Timestamp time="0" id="17">
+    <Block rating="+">4</Block>
+    <Block rating="+">7</Block>
+  </Timestamp>
+  <Timestamp time="0" id="17">
+    <Verteidigung rating="+">9</Verteidigung>
+  </Timestamp>
+  <Timestamp time="0" id="18">
+    <Block rating="+">4</Block>
+    <Block rating="+">7</Block>
+  </Timestamp>
+  <Timestamp time="0" id="18">
+    <Verteidigung rating="+">9</Verteidigung>
+  </Timestamp>
+  <Timestamp time="0" id="19">
+    <Block rating="+">4</Block>
+    <Block rating="+">7</Block>
+  </Timestamp>
+  <Timestamp time="0" id="19">
+    <Verteidigung rating="+">9</Verteidigung>
+  </Timestamp>
+  <Timestamp time="0" id="20">
+    <Block rating="+">4</Block>
+    <Block rating="+">7</Block>
+  </Timestamp>
+  <Timestamp time="0" id="20">
+    <Verteidigung rating="+">9</Verteidigung>
+  </Timestamp>
+  <Timestamp time="0" id="21">
+    <Verteidigung rating="+">9</Verteidigung>
+  </Timestamp>
+  <Timestamp time="0" id="22">
+    <Block rating="+">1</Block>
+    <Block rating="+">2</Block>
+  </Timestamp>
+  <Timestamp time="0" id="23">
+    <Verteidigung rating="+">9</Verteidigung>
+  </Timestamp>
+  <Timestamp time="0" id="24">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="0" id="25">
+    <Annahme rating="/" Laufer="">4</Annahme>
+  </Timestamp>
+  <Timestamp time="0" id="26">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="0" id="27">
+    <Angriff rating="+" Laufer="">4</Angriff>
+  </Timestamp>
+  <Timestamp time="0" id="28">
+    <Annahme rating="/" Laufer="">2</Annahme>
+  </Timestamp>
+  <Timestamp time="0" id="29">
+    <Zuspiel rating="/">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="0" id="30">
+    <Verteidigung rating="+">4</Verteidigung>
+  </Timestamp>
+  <Timestamp time="0" id="31">
+    <Zuspiel rating="+">10</Zuspiel>
+  </Timestamp>
+  <Timestamp time="0" id="32">
+    <Angriff rating="+" Laufer="">7</Angriff>
+  </Timestamp>
+  <Timestamp time="0" id="33">
+    <Aufschlag rating="+">3</Aufschlag>
+  </Timestamp>
+  <Timestamp time="0" id="34">
+    <Block rating="+">7</Block>
+    <Block rating="+">9</Block>
+  </Timestamp>
+  <Timestamp time="0" id="35">
+    <Verteidigung rating="+">3</Verteidigung>
+  </Timestamp>
+  <Timestamp time="0" id="36">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="0" id="37">
+    <Angriff rating="+" Laufer="Abwehr">4</Angriff>
+  </Timestamp>
+  <Timestamp time="0" id="38">
+    <Aufschlag rating="+">3</Aufschlag>
+  </Timestamp>
+  <Timestamp time="0" id="39">
+    <Block rating="+">7</Block>
+    <Block rating="+">9</Block>
+  </Timestamp>
+  <Timestamp time="21058" id="40">
+    <Aufschlag rating="+">3</Aufschlag>
+  </Timestamp>
+  <Timestamp time="10627" id="41">
+    <Verteidigung rating="+">3</Verteidigung>
+  </Timestamp>
+  <Timestamp time="10627" id="42">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="10627" id="43">
+    <Angriff rating="+" Laufer="Abwehr">4</Angriff>
+  </Timestamp>
+  <Timestamp time="4080" id="44">
+    <Aufschlag rating="+">3</Aufschlag>
+  </Timestamp>
+  <Timestamp time="29700" id="45">
+    <Annahme rating="+" Laufer="1">3</Annahme>
+  </Timestamp>
+  <Timestamp time="6.96" id="46">
+    <Aufschlag rating="+">3</Aufschlag>
+  </Timestamp>
+  <Timestamp time="7.545" id="47">
+    <Aufschlag rating="+">3</Aufschlag>
+  </Timestamp>
+  <Timestamp time="14.682" id="48">
+    <Block rating="+">7</Block>
+    <Block rating="+">9</Block>
+  </Timestamp>
+  <Timestamp time="31.141" id="49">
+    <Aufschlag rating="+">7</Aufschlag>
+  </Timestamp>
+  <Timestamp time="55.373" id="50">
+    <Angriff rating="+" Laufer="">2</Angriff>
+  </Timestamp>
+  <Timestamp time="84.032" id="51">
+    <Block rating="+">10</Block>
+    <Block rating="+">3</Block>
+  </Timestamp>
+  <Timestamp time="84.044" id="52">
+    <Verteidigung rating="+">7</Verteidigung>
+  </Timestamp>
+  <Timestamp time="84.055" id="53">
+    <Zuspiel rating="/">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="84.066" id="54">
+    <Angriff rating="+" Laufer="Abwehr">2</Angriff>
+  </Timestamp>
+  <Timestamp time="21.283" id="55">
+    <Annahme rating="+" Laufer="1">10</Annahme>
+  </Timestamp>
+  <Timestamp time="22.285" id="56">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="23.297" id="57">
+    <Angriff rating="+" Laufer="1">4</Angriff>
+  </Timestamp>
+  <Timestamp time="-2.0" id="58">
+    <Aufschlag rating="+">3</Aufschlag>
+  </Timestamp>
+  <Timestamp time="-2.0" id="59">
+    <Verteidigung rating="/">2</Verteidigung>
+  </Timestamp>
+  <Timestamp time="-2.0" id="60">
+    <Verteidigung rating="-">2</Verteidigung>
+  </Timestamp>
+  <Timestamp time="-2.0" id="61">
+    <Dreierblock rating="++">4</Dreierblock>
+    <Dreierblock rating="++">7</Dreierblock>
+    <Dreierblock rating="++">9</Dreierblock>
+  </Timestamp>
+  <Timestamp time="-2.0" id="62">
+    <Dreierblock rating="-">4</Dreierblock>
+    <Dreierblock rating="-">7</Dreierblock>
+    <Dreierblock rating="-">9</Dreierblock>
+  </Timestamp>
+  <Timestamp time="-2.0" id="63">
+    <Dreierblock rating="-">4</Dreierblock>
+    <Dreierblock rating="-">7</Dreierblock>
+    <Dreierblock rating="-">9</Dreierblock>
+  </Timestamp>
+  <Timestamp time="-2.0" id="64">
+    <Annahme rating="-" Laufer="1">4</Annahme>
+  </Timestamp>
+  <Timestamp time="-2.0" id="65">
+    <Annahme rating="-" Laufer="1">4</Annahme>
+  </Timestamp>
+</kiki>
+

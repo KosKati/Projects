@@ -1,0 +1,1272 @@
+<Neuwied>
+  <Timestamp time="46.551" id="1">
+    <Annahme rating="0" Laufer="2">2</Annahme>
+  </Timestamp>
+  <Timestamp time="47.551" id="2">
+    <Zuspiel rating="++">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="48.551" id="3">
+    <Angriff rating="++" Laufer="2">8</Angriff>
+  </Timestamp>
+  <Timestamp time="69.001" id="4">
+    <Aufschlag rating="--">3</Aufschlag>
+  </Timestamp>
+  <Timestamp time="93.372" id="5">
+    <Annahme rating="++" Laufer="1">2</Annahme>
+  </Timestamp>
+  <Timestamp time="94.372" id="6">
+    <Zuspiel rating="-">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="95.372" id="7">
+    <Angriff rating="--" Laufer="1">7</Angriff>
+  </Timestamp>
+  <Timestamp time="115.876" id="8">
+    <Annahme rating="++" Laufer="1">2</Annahme>
+  </Timestamp>
+  <Timestamp time="116.876" id="9">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="117.876" id="10">
+    <Angriff rating="0" Laufer="1">8</Angriff>
+  </Timestamp>
+  <Timestamp time="123.352" id="11">
+    <Block rating="-">7</Block>
+  </Timestamp>
+  <Timestamp time="144.8" id="12">
+    <Annahme rating="-" Laufer="1">3</Annahme>
+  </Timestamp>
+  <Timestamp time="145.811" id="13">
+    <Zuspiel rating="+">11</Zuspiel>
+  </Timestamp>
+  <Timestamp time="146.819" id="14">
+    <Angriff rating="++" Laufer="1">2</Angriff>
+  </Timestamp>
+  <Timestamp time="162.637" id="15">
+    <Aufschlag rating="0">8</Aufschlag>
+  </Timestamp>
+  <Timestamp time="183.041" id="16">
+    <Aufschlag rating="+">8</Aufschlag>
+  </Timestamp>
+  <Timestamp time="186.752" id="17">
+    <Doppelblock rating="+">7</Doppelblock>
+    <Doppelblock rating="+">2</Doppelblock>
+  </Timestamp>
+  <Timestamp time="191.358" id="18">
+    <Verteidigung rating="+">3</Verteidigung>
+  </Timestamp>
+  <Timestamp time="195.254" id="19">
+    <Block rating="--">7</Block>
+  </Timestamp>
+  <Timestamp time="233.249" id="20">
+    <Annahme rating="-" Laufer="6">4</Annahme>
+  </Timestamp>
+  <Timestamp time="234.249" id="21">
+    <Zuspiel rating="0">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="235.249" id="22">
+    <Angriff rating="0" Laufer="6">2</Angriff>
+  </Timestamp>
+  <Timestamp time="256.873" id="23">
+    <Aufschlag rating="+">7</Aufschlag>
+  </Timestamp>
+  <Timestamp time="260.679" id="24">
+    <Verteidigung rating="-">8</Verteidigung>
+  </Timestamp>
+  <Timestamp time="278.052" id="25">
+    <Annahme rating="--" Laufer="5">8</Annahme>
+  </Timestamp>
+  <Timestamp time="297.028" id="26">
+    <Annahme rating="-" Laufer="5">11</Annahme>
+  </Timestamp>
+  <Timestamp time="298.037" id="27">
+    <Zuspiel rating="-">4</Zuspiel>
+  </Timestamp>
+  <Timestamp time="299.047" id="28">
+    <Angriff rating="0" Laufer="5">2</Angriff>
+  </Timestamp>
+  <Timestamp time="302.624" id="29">
+    <Block rating="+">4</Block>
+  </Timestamp>
+  <Timestamp time="304.872" id="30">
+    <Verteidigung rating="++">11</Verteidigung>
+  </Timestamp>
+  <Timestamp time="305.874" id="31">
+    <Zuspiel rating="++">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="306.973" id="32">
+    <Angriff rating="++" Laufer="Abwehr">8</Angriff>
+  </Timestamp>
+  <Timestamp time="327.648" id="33">
+    <Aufschlag rating="+">2</Aufschlag>
+  </Timestamp>
+  <Timestamp time="419.065" id="34">
+    <Annahme rating="0" Laufer="4">8</Annahme>
+  </Timestamp>
+  <Timestamp time="420.077" id="35">
+    <Zuspiel rating="0">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="421.093" id="36">
+    <Angriff rating="+" Laufer="4">4</Angriff>
+  </Timestamp>
+  <Timestamp time="424.392" id="37">
+    <Verteidigung rating="+">2</Verteidigung>
+  </Timestamp>
+  <Timestamp time="425.392" id="38">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="426.392" id="39">
+    <Angriff rating="++" Laufer="Abwehr">4</Angriff>
+  </Timestamp>
+  <Timestamp time="449.957" id="40">
+    <Aufschlag rating="0">4</Aufschlag>
+  </Timestamp>
+  <Timestamp time="452.748" id="41">
+    <Block rating="0">8</Block>
+  </Timestamp>
+  <Timestamp time="454.28" id="42">
+    <Verteidigung rating="+">2</Verteidigung>
+  </Timestamp>
+  <Timestamp time="458.35" id="43">
+    <Verteidigung rating="-">11</Verteidigung>
+  </Timestamp>
+  <Timestamp time="477.885" id="44">
+    <Annahme rating="-" Laufer="3">4</Annahme>
+  </Timestamp>
+  <Timestamp time="478.896" id="45">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="479.906" id="46">
+    <Angriff rating="++" Laufer="3">8</Angriff>
+  </Timestamp>
+  <Timestamp time="503.484" id="47">
+    <Aufschlag rating="+">10</Aufschlag>
+  </Timestamp>
+  <Timestamp time="507.793" id="48">
+    <Doppelblock rating="0">8</Doppelblock>
+    <Doppelblock rating="0">7</Doppelblock>
+  </Timestamp>
+  <Timestamp time="509.735" id="49">
+    <Verteidigung rating="++">4</Verteidigung>
+  </Timestamp>
+  <Timestamp time="510.735" id="50">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="511.735" id="51">
+    <Angriff rating="0" Laufer="Abwehr">8</Angriff>
+  </Timestamp>
+  <Timestamp time="515.283" id="52">
+    <Doppelblock rating="++">7</Doppelblock>
+    <Doppelblock rating="++">3</Doppelblock>
+  </Timestamp>
+  <Timestamp time="535.497" id="53">
+    <Aufschlag rating="--">10</Aufschlag>
+  </Timestamp>
+  <Timestamp time="571.33" id="54">
+    <Aufschlag rating="++">3</Aufschlag>
+  </Timestamp>
+  <Timestamp time="590.526" id="55">
+    <Aufschlag rating="+">3</Aufschlag>
+  </Timestamp>
+  <Timestamp time="594.5" id="56">
+    <Block rating="0">7</Block>
+  </Timestamp>
+  <Timestamp time="594.961" id="57">
+    <Verteidigung rating="++">3</Verteidigung>
+  </Timestamp>
+  <Timestamp time="595.961" id="58">
+    <Verteidigung rating="++">11</Verteidigung>
+  </Timestamp>
+  <Timestamp time="596.961" id="59">
+    <Angriff rating="0" Laufer="Abwehr">7</Angriff>
+  </Timestamp>
+  <Timestamp time="601.606" id="60">
+    <Doppelblock rating="+">7</Doppelblock>
+    <Doppelblock rating="+">2</Doppelblock>
+  </Timestamp>
+  <Timestamp time="604.5" id="61">
+    <Block rating="++">8</Block>
+  </Timestamp>
+  <Timestamp time="672.048" id="62">
+    <Aufschlag rating="+">3</Aufschlag>
+  </Timestamp>
+  <Timestamp time="676.189" id="63">
+    <Doppelblock rating="0">7</Doppelblock>
+    <Doppelblock rating="0">2</Doppelblock>
+  </Timestamp>
+  <Timestamp time="677.201" id="64">
+    <Verteidigung rating="-">11</Verteidigung>
+  </Timestamp>
+  <Timestamp time="697.003" id="65">
+    <Annahme rating="++" Laufer="1">2</Annahme>
+  </Timestamp>
+  <Timestamp time="698.013" id="66">
+    <Zuspiel rating="++">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="699.023" id="67">
+    <Angriff rating="++" Laufer="1">2</Angriff>
+  </Timestamp>
+  <Timestamp time="715.609" id="68">
+    <Aufschlag rating="++">8</Aufschlag>
+  </Timestamp>
+  <Timestamp time="732.679" id="69">
+    <Aufschlag rating="0">8</Aufschlag>
+  </Timestamp>
+  <Timestamp time="736.439" id="70">
+    <Block rating="0">7</Block>
+  </Timestamp>
+  <Timestamp time="737.451" id="71">
+    <Verteidigung rating="-">3</Verteidigung>
+  </Timestamp>
+  <Timestamp time="755.298" id="72">
+    <Verteidigung rating="-">11</Verteidigung>
+  </Timestamp>
+  <Timestamp time="756.298" id="73">
+    <Zuspiel rating="0">8</Zuspiel>
+  </Timestamp>
+  <Timestamp time="757.298" id="74">
+    <Angriff rating="0" Laufer="Abwehr">8</Angriff>
+  </Timestamp>
+  <Timestamp time="762.537" id="75">
+    <Verteidigung rating="-">11</Verteidigung>
+  </Timestamp>
+  <Timestamp time="781.69" id="76">
+    <Annahme rating="++" Laufer="6">2</Annahme>
+  </Timestamp>
+  <Timestamp time="782.702" id="77">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="783.712" id="78">
+    <Angriff rating="--" Laufer="6">2</Angriff>
+  </Timestamp>
+  <Timestamp time="801.464" id="79">
+    <Annahme rating="+" Laufer="6">11</Annahme>
+  </Timestamp>
+  <Timestamp time="802.476" id="80">
+    <Zuspiel rating="0">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="803.486" id="81">
+    <Angriff rating="+" Laufer="6">7</Angriff>
+  </Timestamp>
+  <Timestamp time="820.13" id="82">
+    <Aufschlag rating="0">7</Aufschlag>
+  </Timestamp>
+  <Timestamp time="841.352" id="83">
+    <Annahme rating="++" Laufer="5">8</Annahme>
+  </Timestamp>
+  <Timestamp time="842.352" id="84">
+    <Zuspiel rating="0">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="843.352" id="85">
+    <Angriff rating="0" Laufer="5">4</Angriff>
+  </Timestamp>
+  <Timestamp time="849.359" id="86">
+    <Verteidigung rating="++">8</Verteidigung>
+  </Timestamp>
+  <Timestamp time="850.373" id="87">
+    <Zuspiel rating="++">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="851.384" id="88">
+    <Angriff rating="++" Laufer="Abwehr">4</Angriff>
+  </Timestamp>
+  <Timestamp time="872.435" id="89">
+    <Aufschlag rating="0">2</Aufschlag>
+  </Timestamp>
+  <Timestamp time="877.308" id="90">
+    <Doppelblock rating="+">4</Doppelblock>
+    <Doppelblock rating="+">10</Doppelblock>
+  </Timestamp>
+  <Timestamp time="878.319" id="91">
+    <Verteidigung rating="++">3</Verteidigung>
+  </Timestamp>
+  <Timestamp time="879.329" id="92">
+    <Zuspiel rating="+">11</Zuspiel>
+  </Timestamp>
+  <Timestamp time="880.339" id="93">
+    <Angriff rating="++" Laufer="Abwehr">4</Angriff>
+  </Timestamp>
+  <Timestamp time="961.792" id="94">
+    <Aufschlag rating="0">2</Aufschlag>
+  </Timestamp>
+  <Timestamp time="966.19" id="95">
+    <Doppelblock rating="0">10</Doppelblock>
+    <Doppelblock rating="0">3</Doppelblock>
+  </Timestamp>
+  <Timestamp time="983.699" id="96">
+    <Annahme rating="+" Laufer="4">11</Annahme>
+  </Timestamp>
+  <Timestamp time="984.711" id="97">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="985.722" id="98">
+    <Angriff rating="0" Laufer="4">4</Angriff>
+  </Timestamp>
+  <Timestamp time="987.971" id="99">
+    <Verteidigung rating="++">11</Verteidigung>
+  </Timestamp>
+  <Timestamp time="988.982" id="100">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="989.992" id="101">
+    <Angriff rating="--" Laufer="Abwehr">4</Angriff>
+  </Timestamp>
+  <Timestamp time="1008.796" id="102">
+    <Annahme rating="-" Laufer="4">8</Annahme>
+  </Timestamp>
+  <Timestamp time="1009.809" id="103">
+    <Zuspiel rating="++">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="1010.821" id="104">
+    <Angriff rating="++" Laufer="4">4</Angriff>
+  </Timestamp>
+  <Timestamp time="1029.28" id="105">
+    <Aufschlag rating="+">4</Aufschlag>
+  </Timestamp>
+  <Timestamp time="1033.328" id="106">
+    <Block rating="0">8</Block>
+  </Timestamp>
+  <Timestamp time="1049.77" id="107">
+    <Annahme rating="++" Laufer="3">4</Annahme>
+  </Timestamp>
+  <Timestamp time="1050.77" id="108">
+    <Zuspiel rating="++">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="1051.77" id="109">
+    <Angriff rating="0" Laufer="3">10</Angriff>
+  </Timestamp>
+  <Timestamp time="1056.431" id="110">
+    <Doppelblock rating="0">10</Doppelblock>
+    <Doppelblock rating="0">3</Doppelblock>
+  </Timestamp>
+  <Timestamp time="1057.443" id="111">
+    <Verteidigung rating="++">2</Verteidigung>
+  </Timestamp>
+  <Timestamp time="1058.453" id="112">
+    <Zuspiel rating="++">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="1059.466" id="113">
+    <Angriff rating="+" Laufer="Abwehr">8</Angriff>
+  </Timestamp>
+  <Timestamp time="1065.677" id="114">
+    <Verteidigung rating="++">2</Verteidigung>
+  </Timestamp>
+  <Timestamp time="1066.69" id="115">
+    <Zuspiel rating="++">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="1067.701" id="116">
+    <Angriff rating="++" Laufer="Abwehr">10</Angriff>
+  </Timestamp>
+  <Timestamp time="1090.448" id="117">
+    <Aufschlag rating="+">10</Aufschlag>
+  </Timestamp>
+  <Timestamp time="1095.758" id="118">
+    <Doppelblock rating="0">7</Doppelblock>
+    <Doppelblock rating="0">3</Doppelblock>
+  </Timestamp>
+  <Timestamp time="1096.771" id="119">
+    <Verteidigung rating="-">8</Verteidigung>
+  </Timestamp>
+  <Timestamp time="1097.782" id="120">
+    <Zuspiel rating="0">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="1098.793" id="121">
+    <Angriff rating="0" Laufer="Abwehr">2</Angriff>
+  </Timestamp>
+  <Timestamp time="1100.405" id="122">
+    <Verteidigung rating="0">10</Verteidigung>
+  </Timestamp>
+  <Timestamp time="1101.417" id="123">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="1102.43" id="124">
+    <Angriff rating="0" Laufer="Abwehr">8</Angriff>
+  </Timestamp>
+  <Timestamp time="1104.015" id="125">
+    <Verteidigung rating="-">10</Verteidigung>
+  </Timestamp>
+  <Timestamp time="1123.098" id="126">
+    <Annahme rating="-" Laufer="2">2</Annahme>
+  </Timestamp>
+  <Timestamp time="1124.112" id="127">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="1125.123" id="128">
+    <Angriff rating="+" Laufer="2">8</Angriff>
+  </Timestamp>
+  <Timestamp time="1131.472" id="129">
+    <Verteidigung rating="+">11</Verteidigung>
+  </Timestamp>
+  <Timestamp time="1134.973" id="130">
+    <Verteidigung rating="-">4</Verteidigung>
+  </Timestamp>
+  <Timestamp time="1199.501" id="131">
+    <Annahme rating="++" Laufer="2">11</Annahme>
+  </Timestamp>
+  <Timestamp time="1200.513" id="132">
+    <Zuspiel rating="++">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="1201.524" id="133">
+    <Angriff rating="++" Laufer="2">7</Angriff>
+  </Timestamp>
+  <Timestamp time="1220.081" id="134">
+    <Aufschlag rating="0">3</Aufschlag>
+  </Timestamp>
+  <Timestamp time="1224.617" id="135">
+    <Doppelblock rating="-">7</Doppelblock>
+    <Doppelblock rating="-">2</Doppelblock>
+  </Timestamp>
+  <Timestamp time="1243.118" id="136">
+    <Annahme rating="0" Laufer="1">11</Annahme>
+  </Timestamp>
+  <Timestamp time="1244.118" id="137">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="1245.118" id="138">
+    <Angriff rating="+" Laufer="1">8</Angriff>
+  </Timestamp>
+  <Timestamp time="1248.981" id="139">
+    <Verteidigung rating="+">7</Verteidigung>
+  </Timestamp>
+  <Timestamp time="1249.993" id="140">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="1251.004" id="141">
+    <Angriff rating="0" Laufer="Abwehr">7</Angriff>
+  </Timestamp>
+  <Timestamp time="1252.082" id="142">
+    <Verteidigung rating="0">7</Verteidigung>
+  </Timestamp>
+  <Timestamp time="1253.095" id="143">
+    <Zuspiel rating="0">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="1254.106" id="144">
+    <Angriff rating="0" Laufer="Abwehr">8</Angriff>
+  </Timestamp>
+  <Timestamp time="1280.27" id="145">
+    <Annahme rating="++" Laufer="1">11</Annahme>
+  </Timestamp>
+  <Timestamp time="1281.282" id="146">
+    <Zuspiel rating="++">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="1282.293" id="147">
+    <Angriff rating="++" Laufer="1">2</Angriff>
+  </Timestamp>
+  <Timestamp time="1298.058" id="148">
+    <Aufschlag rating="+">8</Aufschlag>
+  </Timestamp>
+  <Timestamp time="1301.841" id="149">
+    <Block rating="+">4</Block>
+  </Timestamp>
+  <Timestamp time="1307.638" id="150">
+    <Verteidigung rating="++">8</Verteidigung>
+  </Timestamp>
+  <Timestamp time="1308.638" id="151">
+    <Zuspiel rating="++">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="1309.638" id="152">
+    <Angriff rating="--" Laufer="Abwehr">2</Angriff>
+  </Timestamp>
+  <Timestamp time="1371.238" id="153">
+    <Annahme rating="++" Laufer="6">4</Annahme>
+  </Timestamp>
+  <Timestamp time="1372.251" id="154">
+    <Zuspiel rating="++">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="1373.263" id="155">
+    <Angriff rating="+" Laufer="6">4</Angriff>
+  </Timestamp>
+  <Timestamp time="1376.472" id="156">
+    <Verteidigung rating="+">11</Verteidigung>
+  </Timestamp>
+  <Timestamp time="1377.486" id="157">
+    <Zuspiel rating="-">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="1378.497" id="158">
+    <Angriff rating="--" Laufer="Abwehr">2</Angriff>
+  </Timestamp>
+  <Timestamp time="1413.686" id="159">
+    <Aufschlag rating="--">7</Aufschlag>
+  </Timestamp>
+  <Timestamp time="1631.587" id="160">
+    <Aufschlag rating="+">3</Aufschlag>
+  </Timestamp>
+  <Timestamp time="1641.369" id="161">
+    <Block rating="++">8</Block>
+  </Timestamp>
+  <Timestamp time="1659.905" id="162">
+    <Aufschlag rating="+">3</Aufschlag>
+  </Timestamp>
+  <Timestamp time="1663.953" id="163">
+    <Block rating="-">2</Block>
+  </Timestamp>
+  <Timestamp time="1681.357" id="164">
+    <Annahme rating="+" Laufer="1">2</Annahme>
+  </Timestamp>
+  <Timestamp time="1682.361" id="165">
+    <Zuspiel rating="++">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="1683.374" id="166">
+    <Angriff rating="+" Laufer="1">8</Angriff>
+  </Timestamp>
+  <Timestamp time="1688.516" id="167">
+    <Verteidigung rating="+">7</Verteidigung>
+  </Timestamp>
+  <Timestamp time="1689.516" id="168">
+    <Zuspiel rating="0">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="1690.516" id="169">
+    <Angriff rating="-" Laufer="Abwehr">2</Angriff>
+  </Timestamp>
+  <Timestamp time="1710.931" id="170">
+    <Annahme rating="+" Laufer="1">2</Annahme>
+  </Timestamp>
+  <Timestamp time="1711.944" id="171">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="1712.956" id="172">
+    <Angriff rating="++" Laufer="1">2</Angriff>
+  </Timestamp>
+  <Timestamp time="1729.133" id="173">
+    <Aufschlag rating="+">8</Aufschlag>
+  </Timestamp>
+  <Timestamp time="1734.889" id="174">
+    <Verteidigung rating="++">2</Verteidigung>
+  </Timestamp>
+  <Timestamp time="1735.902" id="175">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="1736.914" id="176">
+    <Angriff rating="-" Laufer="Abwehr">4</Angriff>
+  </Timestamp>
+  <Timestamp time="1758.43" id="177">
+    <Annahme rating="++" Laufer="6">4</Annahme>
+  </Timestamp>
+  <Timestamp time="1759.444" id="178">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="1760.456" id="179">
+    <Angriff rating="-" Laufer="6">3</Angriff>
+  </Timestamp>
+  <Timestamp time="1784.593" id="180">
+    <Annahme rating="+" Laufer="6">4</Annahme>
+  </Timestamp>
+  <Timestamp time="1785.606" id="181">
+    <Zuspiel rating="0">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="1786.705" id="182">
+    <Angriff rating="++" Laufer="6">2</Angriff>
+  </Timestamp>
+  <Timestamp time="1806.012" id="183">
+    <Aufschlag rating="+">7</Aufschlag>
+  </Timestamp>
+  <Timestamp time="1810.586" id="184">
+    <Block rating="-">4</Block>
+  </Timestamp>
+  <Timestamp time="1827.522" id="185">
+    <Annahme rating="-" Laufer="5">8</Annahme>
+  </Timestamp>
+  <Timestamp time="1828.522" id="186">
+    <Zuspiel rating="0">10</Zuspiel>
+  </Timestamp>
+  <Timestamp time="1829.522" id="187">
+    <Angriff rating="0" Laufer="5">3</Angriff>
+  </Timestamp>
+  <Timestamp time="1832.265" id="188">
+    <Block rating="0">10</Block>
+  </Timestamp>
+  <Timestamp time="1833.279" id="189">
+    <Verteidigung rating="++">7</Verteidigung>
+  </Timestamp>
+  <Timestamp time="1834.291" id="190">
+    <Zuspiel rating="0">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="1835.304" id="191">
+    <Angriff rating="--" Laufer="Abwehr">4</Angriff>
+  </Timestamp>
+  <Timestamp time="1855.155" id="192">
+    <Annahme rating="-" Laufer="5">8</Annahme>
+  </Timestamp>
+  <Timestamp time="1856.155" id="193">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="1857.155" id="194">
+    <Angriff rating="0" Laufer="5">2</Angriff>
+  </Timestamp>
+  <Timestamp time="1866.078" id="195">
+    <Doppelblock rating="0">10</Doppelblock>
+    <Doppelblock rating="0">2</Doppelblock>
+  </Timestamp>
+  <Timestamp time="1867.078" id="196">
+    <Verteidigung rating="0">8</Verteidigung>
+  </Timestamp>
+  <Timestamp time="1868.078" id="197">
+    <Zuspiel rating="0">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="1869.078" id="198">
+    <Angriff rating="0" Laufer="Abwehr">11</Angriff>
+  </Timestamp>
+  <Timestamp time="1873.094" id="199">
+    <Verteidigung rating="-">11</Verteidigung>
+  </Timestamp>
+  <Timestamp time="1893.733" id="200">
+    <Annahme rating="-" Laufer="5">8</Annahme>
+  </Timestamp>
+  <Timestamp time="1894.748" id="201">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="1895.848" id="202">
+    <Angriff rating="0" Laufer="5">4</Angriff>
+  </Timestamp>
+  <Timestamp time="1901.215" id="203">
+    <Doppelblock rating="0">10</Doppelblock>
+    <Doppelblock rating="0">2</Doppelblock>
+  </Timestamp>
+  <Timestamp time="1902.228" id="204">
+    <Verteidigung rating="+">3</Verteidigung>
+  </Timestamp>
+  <Timestamp time="1903.241" id="205">
+    <Zuspiel rating="++">11</Zuspiel>
+  </Timestamp>
+  <Timestamp time="1904.253" id="206">
+    <Angriff rating="+" Laufer="Abwehr">2</Angriff>
+  </Timestamp>
+  <Timestamp time="1908.739" id="207">
+    <Verteidigung rating="0">11</Verteidigung>
+  </Timestamp>
+  <Timestamp time="1990.288" id="208">
+    <Annahme rating="0" Laufer="5">11</Annahme>
+  </Timestamp>
+  <Timestamp time="1991.301" id="209">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="1992.313" id="210">
+    <Angriff rating="0" Laufer="5">4</Angriff>
+  </Timestamp>
+  <Timestamp time="2022.444" id="211">
+    <Annahme rating="++" Laufer="5">2</Annahme>
+  </Timestamp>
+  <Timestamp time="2023.444" id="212">
+    <Zuspiel rating="++">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="2024.444" id="213">
+    <Angriff rating="++" Laufer="5">14</Angriff>
+  </Timestamp>
+  <Timestamp time="2044.593" id="214">
+    <Aufschlag rating="+">2</Aufschlag>
+  </Timestamp>
+  <Timestamp time="2065.86" id="215">
+    <Annahme rating="-" Laufer="4">11</Annahme>
+  </Timestamp>
+  <Timestamp time="2066.86" id="216">
+    <Zuspiel rating="0">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="2067.86" id="217">
+    <Angriff rating="0" Laufer="4">11</Angriff>
+  </Timestamp>
+  <Timestamp time="2071.125" id="218">
+    <Block rating="0">14</Block>
+  </Timestamp>
+  <Timestamp time="2130.328" id="219">
+    <Annahme rating="--" Laufer="4">11</Annahme>
+  </Timestamp>
+  <Timestamp time="2146.434" id="220">
+    <Annahme rating="-" Laufer="4">8</Annahme>
+  </Timestamp>
+  <Timestamp time="2147.434" id="221">
+    <Zuspiel rating="0">2</Zuspiel>
+  </Timestamp>
+  <Timestamp time="2148.434" id="222">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="2152.124" id="223">
+    <Verteidigung rating="-">11</Verteidigung>
+  </Timestamp>
+  <Timestamp time="2193.599" id="224">
+    <Aufschlag rating="+">14</Aufschlag>
+  </Timestamp>
+  <Timestamp time="2197.732" id="225">
+    <Doppelblock rating="0">8</Doppelblock>
+    <Doppelblock rating="0">10</Doppelblock>
+  </Timestamp>
+  <Timestamp time="2198.746" id="226">
+    <Verteidigung rating="+">2</Verteidigung>
+  </Timestamp>
+  <Timestamp time="2199.759" id="227">
+    <Zuspiel rating="++">12</Zuspiel>
+  </Timestamp>
+  <Timestamp time="2200.773" id="228">
+    <Angriff rating="+" Laufer="Abwehr">8</Angriff>
+  </Timestamp>
+  <Timestamp time="2204.499" id="229">
+    <Block rating="0">8</Block>
+  </Timestamp>
+  <Timestamp time="2244.042" id="230">
+    <Aufschlag rating="+">10</Aufschlag>
+  </Timestamp>
+  <Timestamp time="2248.731" id="231">
+    <Annahme rating="++" Laufer="2">2</Annahme>
+  </Timestamp>
+  <Timestamp time="2249.744" id="232">
+    <Angriff rating="++" Laufer="2">8</Angriff>
+  </Timestamp>
+  <Timestamp time="2269.083" id="233">
+    <Aufschlag rating="--">10</Aufschlag>
+  </Timestamp>
+  <Timestamp time="2287.529" id="234">
+    <Annahme rating="-" Laufer="2">2</Annahme>
+  </Timestamp>
+  <Timestamp time="2288.529" id="235">
+    <Zuspiel rating="-">12</Zuspiel>
+  </Timestamp>
+  <Timestamp time="2366.875" id="236">
+    <Annahme rating="--" Laufer="2">2</Annahme>
+  </Timestamp>
+  <Timestamp time="2385.176" id="237">
+    <Annahme rating="-" Laufer="2">2</Annahme>
+  </Timestamp>
+  <Timestamp time="2386.189" id="238">
+    <Zuspiel rating="0">8</Zuspiel>
+  </Timestamp>
+  <Timestamp time="2387.203" id="239">
+    <Angriff rating="0" Laufer="2">11</Angriff>
+  </Timestamp>
+  <Timestamp time="2390.851" id="240">
+    <Verteidigung rating="-">2</Verteidigung>
+  </Timestamp>
+  <Timestamp time="2452.155" id="241">
+    <Aufschlag rating="0">12</Aufschlag>
+  </Timestamp>
+  <Timestamp time="2473.092" id="242">
+    <Annahme rating="+" Laufer="1">14</Annahme>
+  </Timestamp>
+  <Timestamp time="2474.092" id="243">
+    <Zuspiel rating="0">12</Zuspiel>
+  </Timestamp>
+  <Timestamp time="2475.092" id="244">
+    <Angriff rating="0" Laufer="1">2</Angriff>
+  </Timestamp>
+  <Timestamp time="2478.765" id="245">
+    <Doppelblock rating="0">6</Doppelblock>
+    <Doppelblock rating="0">8</Doppelblock>
+  </Timestamp>
+  <Timestamp time="2519.283" id="246">
+    <Aufschlag rating="0">8</Aufschlag>
+  </Timestamp>
+  <Timestamp time="2542.226" id="247">
+    <Annahme rating="+" Laufer="6">2</Annahme>
+  </Timestamp>
+  <Timestamp time="2543.24" id="248">
+    <Zuspiel rating="++">12</Zuspiel>
+  </Timestamp>
+  <Timestamp time="2544.253" id="249">
+    <Angriff rating="++" Laufer="6">4</Angriff>
+  </Timestamp>
+  <Timestamp time="2566.061" id="250">
+    <Aufschlag rating="+">6</Aufschlag>
+  </Timestamp>
+  <Timestamp time="2597.297" id="251">
+    <Verteidigung rating="++">6</Verteidigung>
+  </Timestamp>
+  <Timestamp time="2600.091" id="252">
+    <Block rating="--">4</Block>
+  </Timestamp>
+  <Timestamp time="2620.502" id="253">
+    <Annahme rating="0" Laufer="5">11</Annahme>
+  </Timestamp>
+  <Timestamp time="2621.515" id="254">
+    <Zuspiel rating="+">12</Zuspiel>
+  </Timestamp>
+  <Timestamp time="2622.529" id="255">
+    <Angriff rating="-" Laufer="5">4</Angriff>
+  </Timestamp>
+  <Timestamp time="2640.628" id="256">
+    <Annahme rating="-" Laufer="5">8</Annahme>
+  </Timestamp>
+  <Timestamp time="2641.642" id="257">
+    <Zuspiel rating="0">12</Zuspiel>
+  </Timestamp>
+  <Timestamp time="2642.655" id="258">
+    <Angriff rating="0" Laufer="5">2</Angriff>
+  </Timestamp>
+  <Timestamp time="2646.558" id="259">
+    <Doppelblock rating="0">10</Doppelblock>
+    <Doppelblock rating="0">2</Doppelblock>
+  </Timestamp>
+  <Timestamp time="2664.969" id="260">
+    <Annahme rating="++" Laufer="5">11</Annahme>
+  </Timestamp>
+  <Timestamp time="2665.969" id="261">
+    <Zuspiel rating="-">12</Zuspiel>
+  </Timestamp>
+  <Timestamp time="2666.969" id="262">
+    <Angriff rating="0" Laufer="5">10</Angriff>
+  </Timestamp>
+  <Timestamp time="2671.41" id="263">
+    <Verteidigung rating="+">11</Verteidigung>
+  </Timestamp>
+  <Timestamp time="2953.498" id="264">
+    <Annahme rating="+" Laufer="2">8</Annahme>
+  </Timestamp>
+  <Timestamp time="2954.503" id="265">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="2955.617" id="266">
+    <Angriff rating="0" Laufer="2">2</Angriff>
+  </Timestamp>
+  <Timestamp time="2958.028" id="267">
+    <Verteidigung rating="++">4</Verteidigung>
+  </Timestamp>
+  <Timestamp time="2959.042" id="268">
+    <Zuspiel rating="0">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="2960.055" id="269">
+    <Angriff rating="++" Laufer="Abwehr">8</Angriff>
+  </Timestamp>
+  <Timestamp time="2981.643" id="270">
+    <Aufschlag rating="+">3</Aufschlag>
+  </Timestamp>
+  <Timestamp time="2986.39" id="271">
+    <Doppelblock rating="0">6</Doppelblock>
+    <Doppelblock rating="0">8</Doppelblock>
+  </Timestamp>
+  <Timestamp time="2987.39" id="272">
+    <Verteidigung rating="++">4</Verteidigung>
+  </Timestamp>
+  <Timestamp time="2988.39" id="273">
+    <Zuspiel rating="0">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="2989.39" id="274">
+    <Angriff rating="--" Laufer="Abwehr">2</Angriff>
+  </Timestamp>
+  <Timestamp time="3007.779" id="275">
+    <Annahme rating="+" Laufer="1">8</Annahme>
+  </Timestamp>
+  <Timestamp time="3008.779" id="276">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="3009.779" id="277">
+    <Angriff rating="+" Laufer="1">6</Angriff>
+  </Timestamp>
+  <Timestamp time="3013.313" id="278">
+    <Block rating="++">6</Block>
+  </Timestamp>
+  <Timestamp time="3038.61" id="279">
+    <Aufschlag rating="--">2</Aufschlag>
+  </Timestamp>
+  <Timestamp time="3056.455" id="280">
+    <Annahme rating="--" Laufer="6">1</Annahme>
+  </Timestamp>
+  <Timestamp time="3073.118" id="281">
+    <Annahme rating="0" Laufer="6">4</Annahme>
+  </Timestamp>
+  <Timestamp time="3074.118" id="282">
+    <Zuspiel rating="++">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="3075.118" id="283">
+    <Angriff rating="+" Laufer="6">4</Angriff>
+  </Timestamp>
+  <Timestamp time="3080.599" id="284">
+    <Verteidigung rating="++">1</Verteidigung>
+  </Timestamp>
+  <Timestamp time="3081.599" id="285">
+    <Zuspiel rating="++">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="3082.599" id="286">
+    <Angriff rating="+" Laufer="Abwehr">8</Angriff>
+  </Timestamp>
+  <Timestamp time="3087.642" id="287">
+    <Verteidigung rating="-">4</Verteidigung>
+  </Timestamp>
+  <Timestamp time="3107.297" id="288">
+    <Annahme rating="++" Laufer="6">2</Annahme>
+  </Timestamp>
+  <Timestamp time="3108.297" id="289">
+    <Zuspiel rating="++">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="3109.297" id="290">
+    <Angriff rating="+" Laufer="6">4</Angriff>
+  </Timestamp>
+  <Timestamp time="3113.427" id="291">
+    <Verteidigung rating="0">2</Verteidigung>
+  </Timestamp>
+  <Timestamp time="3114.427" id="292">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="3115.427" id="293">
+    <Angriff rating="0" Laufer="Abwehr">6</Angriff>
+  </Timestamp>
+  <Timestamp time="3117.154" id="294">
+    <Verteidigung rating="+">3</Verteidigung>
+  </Timestamp>
+  <Timestamp time="3118.154" id="295">
+    <Zuspiel rating="+">1</Zuspiel>
+  </Timestamp>
+  <Timestamp time="3119.154" id="296">
+    <Angriff rating="0" Laufer="Abwehr">4</Angriff>
+  </Timestamp>
+  <Timestamp time="3122.779" id="297">
+    <Doppelblock rating="0">4</Doppelblock>
+    <Doppelblock rating="0">6</Doppelblock>
+  </Timestamp>
+  <Timestamp time="3123.779" id="298">
+    <Verteidigung rating="++">1</Verteidigung>
+  </Timestamp>
+  <Timestamp time="3124.779" id="299">
+    <Zuspiel rating="++">8</Zuspiel>
+  </Timestamp>
+  <Timestamp time="3125.779" id="300">
+    <Angriff rating="0" Laufer="Abwehr">4</Angriff>
+  </Timestamp>
+  <Timestamp time="3150.985" id="301">
+    <Aufschlag rating="0">6</Aufschlag>
+  </Timestamp>
+  <Timestamp time="3154.076" id="302">
+    <Block rating="0">7</Block>
+  </Timestamp>
+  <Timestamp time="3176.186" id="303">
+    <Annahme rating="-" Laufer="5">4</Annahme>
+  </Timestamp>
+  <Timestamp time="3195.724" id="304">
+    <Aufschlag rating="0">8</Aufschlag>
+  </Timestamp>
+  <Timestamp time="3199.527" id="305">
+    <Doppelblock rating="0">7</Doppelblock>
+    <Doppelblock rating="0">3</Doppelblock>
+  </Timestamp>
+  <Timestamp time="3200.527" id="306">
+    <Verteidigung rating="0">7</Verteidigung>
+  </Timestamp>
+  <Timestamp time="3201.527" id="307">
+    <Zuspiel rating="+">8</Zuspiel>
+  </Timestamp>
+  <Timestamp time="3202.527" id="308">
+    <Angriff rating="--" Laufer="Abwehr">4</Angriff>
+  </Timestamp>
+  <Timestamp time="3228.999" id="309">
+    <Verteidigung rating="0">2</Verteidigung>
+  </Timestamp>
+  <Timestamp time="3229.999" id="310">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="3230.999" id="311">
+    <Angriff rating="+" Laufer="Abwehr">4</Angriff>
+  </Timestamp>
+  <Timestamp time="3268.097" id="312">
+    <Annahme rating="++" Laufer="4">1</Annahme>
+  </Timestamp>
+  <Timestamp time="3269.097" id="313">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="3270.097" id="314">
+    <Angriff rating="--" Laufer="4">4</Angriff>
+  </Timestamp>
+  <Timestamp time="3366.221" id="315">
+    <Aufschlag rating="--">4</Aufschlag>
+  </Timestamp>
+  <Timestamp time="3384.184" id="316">
+    <Annahme rating="+" Laufer="3">2</Annahme>
+  </Timestamp>
+  <Timestamp time="3385.184" id="317">
+    <Zuspiel rating="0">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="3386.184" id="318">
+    <Angriff rating="0" Laufer="3">7</Angriff>
+  </Timestamp>
+  <Timestamp time="3389.236" id="319">
+    <Doppelblock rating="0">2</Doppelblock>
+    <Doppelblock rating="0">7</Doppelblock>
+  </Timestamp>
+  <Timestamp time="3407.103" id="320">
+    <Annahme rating="0" Laufer="3">1</Annahme>
+  </Timestamp>
+  <Timestamp time="3408.103" id="321">
+    <Zuspiel rating="0">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="3409.103" id="322">
+    <Angriff rating="-" Laufer="3">2</Angriff>
+  </Timestamp>
+  <Timestamp time="3428.59" id="323">
+    <Annahme rating="-" Laufer="3">8</Annahme>
+  </Timestamp>
+  <Timestamp time="3429.59" id="324">
+    <Zuspiel rating="+">1</Zuspiel>
+  </Timestamp>
+  <Timestamp time="3430.59" id="325">
+    <Angriff rating="0" Laufer="3">2</Angriff>
+  </Timestamp>
+  <Timestamp time="3432.074" id="326">
+    <Verteidigung rating="+">2</Verteidigung>
+  </Timestamp>
+  <Timestamp time="3433.074" id="327">
+    <Zuspiel rating="0">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="3434.074" id="328">
+    <Angriff rating="--" Laufer="Abwehr">7</Angriff>
+  </Timestamp>
+  <Timestamp time="3498.607" id="329">
+    <Annahme rating="-" Laufer="3">4</Annahme>
+  </Timestamp>
+  <Timestamp time="3499.607" id="330">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="3500.607" id="331">
+    <Angriff rating="++" Laufer="3">8</Angriff>
+  </Timestamp>
+  <Timestamp time="3521.184" id="332">
+    <Aufschlag rating="+">7</Aufschlag>
+  </Timestamp>
+  <Timestamp time="3526.487" id="333">
+    <Doppelblock rating="0">6</Doppelblock>
+    <Doppelblock rating="0">3</Doppelblock>
+  </Timestamp>
+  <Timestamp time="3527.487" id="334">
+    <Verteidigung rating="+">4</Verteidigung>
+  </Timestamp>
+  <Timestamp time="3528.487" id="335">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="3529.487" id="336">
+    <Angriff rating="++" Laufer="Abwehr">2</Angriff>
+  </Timestamp>
+  <Timestamp time="3546.482" id="337">
+    <Aufschlag rating="+">7</Aufschlag>
+  </Timestamp>
+  <Timestamp time="3551.061" id="338">
+    <Verteidigung rating="++">7</Verteidigung>
+  </Timestamp>
+  <Timestamp time="3552.061" id="339">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="3553.061" id="340">
+    <Angriff rating="--" Laufer="Abwehr">2</Angriff>
+  </Timestamp>
+  <Timestamp time="3587.689" id="341">
+    <Annahme rating="-" Laufer="5">2</Annahme>
+  </Timestamp>
+  <Timestamp time="3608.538" id="342">
+    <Annahme rating="++" Laufer="5">2</Annahme>
+  </Timestamp>
+  <Timestamp time="3609.538" id="343">
+    <Zuspiel rating="0">12</Zuspiel>
+  </Timestamp>
+  <Timestamp time="3610.538" id="344">
+    <Angriff rating="++" Laufer="5">14</Angriff>
+  </Timestamp>
+  <Timestamp time="3626.385" id="345">
+    <Aufschlag rating="0">14</Aufschlag>
+  </Timestamp>
+  <Timestamp time="3662.568" id="346">
+    <Annahme rating="++" Laufer="4">14</Annahme>
+  </Timestamp>
+  <Timestamp time="3663.568" id="347">
+    <Zuspiel rating="++">12</Zuspiel>
+  </Timestamp>
+  <Timestamp time="3664.568" id="348">
+    <Angriff rating="++" Laufer="4">2</Angriff>
+  </Timestamp>
+  <Timestamp time="3688.02" id="349">
+    <Aufschlag rating="0">2</Aufschlag>
+  </Timestamp>
+  <Timestamp time="3690.243" id="350">
+    <Doppelblock rating="0">4</Doppelblock>
+    <Doppelblock rating="0">6</Doppelblock>
+  </Timestamp>
+  <Timestamp time="3710.511" id="351">
+    <Aufschlag rating="+">2</Aufschlag>
+  </Timestamp>
+  <Timestamp time="3799.606" id="352">
+    <Annahme rating="++" Laufer="3">14</Annahme>
+  </Timestamp>
+  <Timestamp time="3800.606" id="353">
+    <Zuspiel rating="++">12</Zuspiel>
+  </Timestamp>
+  <Timestamp time="3801.606" id="354">
+    <Angriff rating="+" Laufer="3">4</Angriff>
+  </Timestamp>
+  <Timestamp time="3806.305" id="355">
+    <Verteidigung rating="0">14</Verteidigung>
+  </Timestamp>
+  <Timestamp time="3807.755" id="356">
+    <Verteidigung rating="0">14</Verteidigung>
+  </Timestamp>
+  <Timestamp time="3815.062" id="357">
+    <Verteidigung rating="-">14</Verteidigung>
+  </Timestamp>
+  <Timestamp time="3846.305" id="358">
+    <Annahme rating="++" Laufer="6">2</Annahme>
+  </Timestamp>
+  <Timestamp time="3847.305" id="359">
+    <Zuspiel rating="++">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="3848.305" id="360">
+    <Angriff rating="++" Laufer="6">4</Angriff>
+  </Timestamp>
+  <Timestamp time="3865.939" id="361">
+    <Aufschlag rating="+">6</Aufschlag>
+  </Timestamp>
+  <Timestamp time="3870.651" id="362">
+    <Doppelblock rating="0">4</Doppelblock>
+    <Doppelblock rating="0">7</Doppelblock>
+  </Timestamp>
+  <Timestamp time="3871.651" id="363">
+    <Verteidigung rating="+">2</Verteidigung>
+  </Timestamp>
+  <Timestamp time="3872.651" id="364">
+    <Verteidigung rating="-">6</Verteidigung>
+  </Timestamp>
+  <Timestamp time="3873.97" id="365">
+    <Verteidigung rating="0">8</Verteidigung>
+  </Timestamp>
+  <Timestamp time="3879.263" id="366">
+    <Doppelblock rating="-">7</Doppelblock>
+    <Doppelblock rating="-">8</Doppelblock>
+  </Timestamp>
+  <Timestamp time="3945.202" id="367">
+    <Angriff rating="+" Laufer="Abwehr">8</Angriff>
+  </Timestamp>
+  <Timestamp time="3949.924" id="368">
+    <Verteidigung rating="+">7</Verteidigung>
+  </Timestamp>
+  <Timestamp time="3950.924" id="369">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="3951.924" id="370">
+    <Angriff rating="0" Laufer="Abwehr">4</Angriff>
+  </Timestamp>
+  <Timestamp time="3952.855" id="371">
+    <Verteidigung rating="-">4</Verteidigung>
+  </Timestamp>
+  <Timestamp time="3953.855" id="372">
+    <Zuspiel rating="-">1</Zuspiel>
+  </Timestamp>
+  <Timestamp time="3954.855" id="373">
+    <Angriff rating="0" Laufer="Abwehr">3</Angriff>
+  </Timestamp>
+  <Timestamp time="3975.06" id="374">
+    <Aufschlag rating="++">8</Aufschlag>
+  </Timestamp>
+  <Timestamp time="3992.108" id="375">
+    <Aufschlag rating="0">8</Aufschlag>
+  </Timestamp>
+  <Timestamp time="3996.139" id="376">
+    <Verteidigung rating="++">1</Verteidigung>
+  </Timestamp>
+  <Timestamp time="3997.139" id="377">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="3998.139" id="378">
+    <Angriff rating="0" Laufer="Abwehr">2</Angriff>
+  </Timestamp>
+  <Timestamp time="4001.905" id="379">
+    <Doppelblock rating="-">7</Doppelblock>
+    <Doppelblock rating="-">3</Doppelblock>
+  </Timestamp>
+  <Timestamp time="4025.288" id="380">
+    <Annahme rating="+" Laufer="4">2</Annahme>
+  </Timestamp>
+  <Timestamp time="4026.288" id="381">
+    <Zuspiel rating="--">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="4086.472" id="382">
+    <Annahme rating="0" Laufer="4">1</Annahme>
+  </Timestamp>
+  <Timestamp time="4087.472" id="383">
+    <Zuspiel rating="0">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="4088.472" id="384">
+    <Angriff rating="0" Laufer="4">4</Angriff>
+  </Timestamp>
+  <Timestamp time="4091.602" id="385">
+    <Block rating="0">4</Block>
+  </Timestamp>
+  <Timestamp time="4113.562" id="386">
+    <Annahme rating="0" Laufer="4">2</Annahme>
+  </Timestamp>
+  <Timestamp time="4114.562" id="387">
+    <Zuspiel rating="0">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="4115.562" id="388">
+    <Angriff rating="0" Laufer="4">8</Angriff>
+  </Timestamp>
+  <Timestamp time="4119.042" id="389">
+    <Block rating="-">4</Block>
+  </Timestamp>
+  <Timestamp time="4146.258" id="390">
+    <Annahme rating="-" Laufer="4">2</Annahme>
+  </Timestamp>
+  <Timestamp time="4147.258" id="391">
+    <Zuspiel rating="+">1</Zuspiel>
+  </Timestamp>
+  <Timestamp time="4148.258" id="392">
+    <Angriff rating="-" Laufer="4">4</Angriff>
+  </Timestamp>
+  <Timestamp time="4185.586" id="393">
+    <Aufschlag rating="+">4</Aufschlag>
+  </Timestamp>
+  <Timestamp time="4190.311" id="394">
+    <Verteidigung rating="++">4</Verteidigung>
+  </Timestamp>
+  <Timestamp time="4191.311" id="395">
+    <Zuspiel rating="++">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="4192.311" id="396">
+    <Angriff rating="+" Laufer="Abwehr">2</Angriff>
+  </Timestamp>
+  <Timestamp time="4195.837" id="397">
+    <Verteidigung rating="++">1</Verteidigung>
+  </Timestamp>
+  <Timestamp time="4196.837" id="398">
+    <Zuspiel rating="++">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="4197.837" id="399">
+    <Angriff rating="++" Laufer="Abwehr">10</Angriff>
+  </Timestamp>
+  <Timestamp time="4214.528" id="400">
+    <Aufschlag rating="+">4</Aufschlag>
+  </Timestamp>
+  <Timestamp time="4235.382" id="401">
+    <Aufschlag rating="0">4</Aufschlag>
+  </Timestamp>
+  <Timestamp time="4244.774" id="402">
+    <Verteidigung rating="-">1</Verteidigung>
+  </Timestamp>
+  <Timestamp time="4245.774" id="403">
+    <Zuspiel rating="0">10</Zuspiel>
+  </Timestamp>
+  <Timestamp time="4246.774" id="404">
+    <Angriff rating="++" Laufer="Abwehr">4</Angriff>
+  </Timestamp>
+  <Timestamp time="4266.218" id="405">
+    <Aufschlag rating="0">4</Aufschlag>
+  </Timestamp>
+  <Timestamp time="4269.194" id="406">
+    <Block rating="0">2</Block>
+  </Timestamp>
+  <Timestamp time="4286.377" id="407">
+    <Annahme rating="++" Laufer="3">1</Annahme>
+  </Timestamp>
+  <Timestamp time="4287.377" id="408">
+    <Zuspiel rating="-">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="4288.377" id="409">
+    <Angriff rating="0" Laufer="3">10</Angriff>
+  </Timestamp>
+  <Timestamp time="4293.777" id="410">
+    <Verteidigung rating="++">1</Verteidigung>
+  </Timestamp>
+  <Timestamp time="4294.777" id="411">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="4295.777" id="412">
+    <Angriff rating="0" Laufer="Abwehr">2</Angriff>
+  </Timestamp>
+  <Timestamp time="4297.601" id="413">
+    <Verteidigung rating="++">1</Verteidigung>
+  </Timestamp>
+  <Timestamp time="4298.601" id="414">
+    <Zuspiel rating="0">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="4299.601" id="415">
+    <Angriff rating="0" Laufer="Abwehr">4</Angriff>
+  </Timestamp>
+</Neuwied>
+

@@ -1,0 +1,304 @@
+<Planegg>
+  <Timestamp time="69.599" id="1">
+    <Annahme rating="--" Laufer="2">2</Annahme>
+  </Timestamp>
+  <Timestamp time="102.379" id="2">
+    <Annahme rating="++" Laufer="2">99</Annahme>
+  </Timestamp>
+  <Timestamp time="103.66" id="3">
+    <Angriff rating="+" Laufer="">13</Angriff>
+  </Timestamp>
+  <Timestamp time="138.465" id="4">
+    <Doppelblock rating="+">13</Doppelblock>
+    <Doppelblock rating="+">10</Doppelblock>
+  </Timestamp>
+  <Timestamp time="226.278" id="5">
+    <Annahme rating="++" Laufer="1">2</Annahme>
+  </Timestamp>
+  <Timestamp time="229.501" id="6">
+    <Angriff rating="++" Laufer="1">13</Angriff>
+  </Timestamp>
+  <Timestamp time="250.186" id="7">
+    <Annahme rating="++" Laufer="1">2</Annahme>
+  </Timestamp>
+  <Timestamp time="278.54" id="8">
+    <Annahme rating="+" Laufer="1">99</Annahme>
+  </Timestamp>
+  <Timestamp time="299.829" id="9">
+    <Aufschlag rating="+">13</Aufschlag>
+  </Timestamp>
+  <Timestamp time="332.202" id="10">
+    <Annahme rating="++" Laufer="6">13</Annahme>
+  </Timestamp>
+  <Timestamp time="422.1" id="11">
+    <Annahme rating="++" Laufer="5">2</Annahme>
+  </Timestamp>
+  <Timestamp time="508.229" id="12">
+    <Annahme rating="++" Laufer="5">13</Annahme>
+  </Timestamp>
+  <Timestamp time="522.593" id="13">
+    <Angriff rating="++" Laufer="5">13</Angriff>
+  </Timestamp>
+  <Timestamp time="601.477" id="14">
+    <Annahme rating="++" Laufer="4">99</Annahme>
+  </Timestamp>
+  <Timestamp time="631.796" id="15">
+    <Annahme rating="++" Laufer="4">13</Annahme>
+  </Timestamp>
+  <Timestamp time="658.514" id="16">
+    <Annahme rating="++" Laufer="4">13</Annahme>
+  </Timestamp>
+  <Timestamp time="685.69" id="17">
+    <Annahme rating="++" Laufer="4">99</Annahme>
+  </Timestamp>
+  <Timestamp time="777.249" id="18">
+    <Annahme rating="++" Laufer="3">13</Annahme>
+  </Timestamp>
+  <Timestamp time="780.413" id="19">
+    <Angriff rating="++" Laufer="3">13</Angriff>
+  </Timestamp>
+  <Timestamp time="810.755" id="20">
+    <Angriff rating="++" Laufer="">13</Angriff>
+  </Timestamp>
+  <Timestamp time="831.41" id="21">
+    <Annahme rating="++" Laufer="2">99</Annahme>
+  </Timestamp>
+  <Timestamp time="833.875" id="22">
+    <Angriff rating="++" Laufer="2">13</Angriff>
+  </Timestamp>
+  <Timestamp time="874.546" id="23">
+    <Annahme rating="++" Laufer="2">2</Annahme>
+  </Timestamp>
+  <Timestamp time="954.451" id="24">
+    <Annahme rating="++" Laufer="2">99</Annahme>
+  </Timestamp>
+  <Timestamp time="957.961" id="25">
+    <Angriff rating="++" Laufer="2">13</Angriff>
+  </Timestamp>
+  <Timestamp time="1062.163" id="26">
+    <Annahme rating="++" Laufer="1">99</Annahme>
+  </Timestamp>
+  <Timestamp time="1064.136" id="27">
+    <Angriff rating="++" Laufer="1">13</Angriff>
+  </Timestamp>
+  <Timestamp time="1101.71" id="28">
+    <Annahme rating="++" Laufer="1">99</Annahme>
+  </Timestamp>
+  <Timestamp time="1104.175" id="29">
+    <Angriff rating="++" Laufer="1">13</Angriff>
+  </Timestamp>
+  <Timestamp time="1122.864" id="30">
+    <Aufschlag rating="++">13</Aufschlag>
+  </Timestamp>
+  <Timestamp time="1151.613" id="31">
+    <Annahme rating="++" Laufer="6">2</Annahme>
+  </Timestamp>
+  <Timestamp time="1225.754" id="33">
+    <Annahme rating="+" Laufer="5">13</Annahme>
+  </Timestamp>
+  <Timestamp time="1339.897" id="34">
+    <Annahme rating="++" Laufer="4">13</Annahme>
+  </Timestamp>
+  <Timestamp time="1362.149" id="35">
+    <Annahme rating="++" Laufer="4">13</Annahme>
+  </Timestamp>
+  <Timestamp time="1448.242" id="36">
+    <Annahme rating="++" Laufer="4">99</Annahme>
+  </Timestamp>
+  <Timestamp time="1661.188" id="37">
+    <Annahme rating="++" Laufer="1">99</Annahme>
+  </Timestamp>
+  <Timestamp time="1681.517" id="38">
+    <Annahme rating="++" Laufer="1">99</Annahme>
+  </Timestamp>
+  <Timestamp time="1691.241" id="39">
+    <Angriff rating="++" Laufer="1">13</Angriff>
+  </Timestamp>
+  <Timestamp time="1720.776" id="40">
+    <Aufschlag rating="++">13</Aufschlag>
+  </Timestamp>
+  <Timestamp time="1749.783" id="41">
+    <Annahme rating="++" Laufer="6">2</Annahme>
+  </Timestamp>
+  <Timestamp time="1771.397" id="42">
+    <Annahme rating="++" Laufer="6">13</Annahme>
+  </Timestamp>
+  <Timestamp time="1843.886" id="43">
+    <Annahme rating="++" Laufer="6">99</Annahme>
+  </Timestamp>
+  <Timestamp time="1870.845" id="44">
+    <Annahme rating="++" Laufer="6">99</Annahme>
+  </Timestamp>
+  <Timestamp time="1892.047" id="45">
+    <Angriff rating="++" Laufer="6">13</Angriff>
+  </Timestamp>
+  <Timestamp time="2050.811" id="46">
+    <Annahme rating="++" Laufer="4">99</Annahme>
+  </Timestamp>
+  <Timestamp time="2075.499" id="47">
+    <Annahme rating="++" Laufer="4">13</Annahme>
+  </Timestamp>
+  <Timestamp time="2112.274" id="48">
+    <Annahme rating="++" Laufer="4">99</Annahme>
+  </Timestamp>
+  <Timestamp time="2197.851" id="49">
+    <Annahme rating="++" Laufer="3">99</Annahme>
+  </Timestamp>
+  <Timestamp time="2199.809" id="50">
+    <Angriff rating="++" Laufer="3">13</Angriff>
+  </Timestamp>
+  <Timestamp time="2206.117" id="51">
+    <Angriff rating="++" Laufer="">13</Angriff>
+  </Timestamp>
+  <Timestamp time="2252.173" id="52">
+    <Annahme rating="++" Laufer="2">2</Annahme>
+  </Timestamp>
+  <Timestamp time="2505.745" id="53">
+    <Annahme rating="++" Laufer="1">13</Annahme>
+  </Timestamp>
+  <Timestamp time="2527.647" id="54">
+    <Aufschlag rating="++">13</Aufschlag>
+  </Timestamp>
+  <Timestamp time="2553.492" id="55">
+    <Annahme rating="++" Laufer="6">2</Annahme>
+  </Timestamp>
+  <Timestamp time="2686.554" id="56">
+    <Annahme rating="++" Laufer="5">2</Annahme>
+  </Timestamp>
+  <Timestamp time="2738.802" id="57">
+    <Annahme rating="++" Laufer="4">13</Annahme>
+  </Timestamp>
+  <Timestamp time="2843.177" id="58">
+    <Angriff rating="++" Laufer="5">13</Angriff>
+  </Timestamp>
+  <Timestamp time="2945.838" id="59">
+    <Angriff rating="++" Laufer="">13</Angriff>
+  </Timestamp>
+  <Timestamp time="3058.799" id="60">
+    <Annahme rating="++" Laufer="3">10</Annahme>
+  </Timestamp>
+  <Timestamp time="3060.948" id="61">
+    <Angriff rating="++" Laufer="3">13</Angriff>
+  </Timestamp>
+  <Timestamp time="3110.051" id="62">
+    <Annahme rating="++" Laufer="2">4</Annahme>
+  </Timestamp>
+  <Timestamp time="3160.685" id="63">
+    <Annahme rating="++" Laufer="1">2</Annahme>
+  </Timestamp>
+  <Timestamp time="3163.832" id="64">
+    <Angriff rating="++" Laufer="1">13</Angriff>
+  </Timestamp>
+  <Timestamp time="3234.116" id="65">
+    <Annahme rating="++" Laufer="1">99</Annahme>
+  </Timestamp>
+  <Timestamp time="3237.362" id="66">
+    <Angriff rating="++" Laufer="1">13</Angriff>
+  </Timestamp>
+  <Timestamp time="3258.738" id="67">
+    <Annahme rating="++" Laufer="1">99</Annahme>
+  </Timestamp>
+  <Timestamp time="3283.438" id="68">
+    <Annahme rating="++" Laufer="1">13</Annahme>
+  </Timestamp>
+  <Timestamp time="3308.907" id="69">
+    <Annahme rating="++" Laufer="1">99</Annahme>
+  </Timestamp>
+  <Timestamp time="3578.604" id="70">
+    <Annahme rating="++" Laufer="1">2</Annahme>
+  </Timestamp>
+  <Timestamp time="3652.527" id="71">
+    <Aufschlag rating="++">13</Aufschlag>
+  </Timestamp>
+  <Timestamp time="3660.228" id="72">
+    <Angriff rating="++" Laufer="">13</Angriff>
+  </Timestamp>
+  <Timestamp time="3676.132" id="73">
+    <Angriff rating="++" Laufer="">13</Angriff>
+  </Timestamp>
+  <Timestamp time="3971.222" id="74">
+    <Annahme rating="++" Laufer="3">13</Annahme>
+  </Timestamp>
+  <Timestamp time="3972.704" id="75">
+    <Angriff rating="++" Laufer="3">13</Angriff>
+  </Timestamp>
+  <Timestamp time="4067.39" id="76">
+    <Angriff rating="++" Laufer="">13</Angriff>
+  </Timestamp>
+  <Timestamp time="4142.967" id="77">
+    <Annahme rating="++" Laufer="1">2</Annahme>
+  </Timestamp>
+  <Timestamp time="4175.11" id="78">
+    <Annahme rating="++" Laufer="1">99</Annahme>
+  </Timestamp>
+  <Timestamp time="4247.973" id="79">
+    <Annahme rating="++" Laufer="1">13</Annahme>
+  </Timestamp>
+  <Timestamp time="4297.46" id="80">
+    <Angriff rating="++" Laufer="1">13</Angriff>
+  </Timestamp>
+  <Timestamp time="4399.459" id="81">
+    <Annahme rating="++" Laufer="6">2</Annahme>
+  </Timestamp>
+  <Timestamp time="4523.344" id="82">
+    <Annahme rating="++" Laufer="5">13</Annahme>
+  </Timestamp>
+  <Timestamp time="4542.878" id="83">
+    <Annahme rating="++" Laufer="5">13</Annahme>
+  </Timestamp>
+  <Timestamp time="4588.732" id="84">
+    <Angriff rating="++" Laufer="5">13</Angriff>
+  </Timestamp>
+  <Timestamp time="4615.045" id="85">
+    <Annahme rating="++" Laufer="4">13</Annahme>
+  </Timestamp>
+  <Timestamp time="4703.883" id="86">
+    <Annahme rating="++" Laufer="6">4</Annahme>
+  </Timestamp>
+  <Timestamp time="4706.153" id="87">
+    <Angriff rating="++" Laufer="6">13</Angriff>
+  </Timestamp>
+  <Timestamp time="4838.568" id="88">
+    <Annahme rating="++" Laufer="5">99</Annahme>
+  </Timestamp>
+  <Timestamp time="4840.676" id="89">
+    <Angriff rating="++" Laufer="5">13</Angriff>
+  </Timestamp>
+  <Timestamp time="4912.761" id="90">
+    <Annahme rating="++" Laufer="1">99</Annahme>
+  </Timestamp>
+  <Timestamp time="4914.424" id="91">
+    <Angriff rating="++" Laufer="1">13</Angriff>
+  </Timestamp>
+  <Timestamp time="4941.369" id="92">
+    <Annahme rating="++" Laufer="1">99</Annahme>
+  </Timestamp>
+  <Timestamp time="4969.643" id="93">
+    <Annahme rating="++" Laufer="1">2</Annahme>
+  </Timestamp>
+  <Timestamp time="5032.467" id="94">
+    <Annahme rating="++" Laufer="1">13</Annahme>
+  </Timestamp>
+  <Timestamp time="5034.771" id="95">
+    <Angriff rating="++" Laufer="1">13</Angriff>
+  </Timestamp>
+  <Timestamp time="5057.107" id="96">
+    <Aufschlag rating="++">13</Aufschlag>
+  </Timestamp>
+  <Timestamp time="5085.528" id="97">
+    <Annahme rating="++" Laufer="6">99</Annahme>
+  </Timestamp>
+  <Timestamp time="5122.984" id="98">
+    <Annahme rating="++" Laufer="6">99</Annahme>
+  </Timestamp>
+  <Timestamp time="5125.646" id="99">
+    <Angriff rating="++" Laufer="6">13</Angriff>
+  </Timestamp>
+  <Timestamp time="5133.856" id="100">
+    <Angriff rating="++" Laufer="">13</Angriff>
+  </Timestamp>
+  <Timestamp time="5167.147" id="101">
+    <Angriff rating="++" Laufer="">13</Angriff>
+  </Timestamp>
+</Planegg>
+

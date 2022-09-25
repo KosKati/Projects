@@ -1,0 +1,59 @@
+<kiki>
+  <Timestamp time="0" id="0">
+    <Aufschlag>2</Aufschlag>
+  </Timestamp>
+  <Timestamp time="0" id="0">
+    <Aufschlag>2</Aufschlag>
+  </Timestamp>
+  <Timestamp time="0" id="1">
+    <Block rating="+">4</Block>
+    <Block rating="+">7</Block>
+  </Timestamp>
+  <Timestamp time="0" id="2">
+    <Verteidigung rating="+">9</Verteidigung>
+  </Timestamp>
+  <Timestamp time="0" id="3">
+    <Verteidigung rating="+">9</Verteidigung>
+  </Timestamp>
+  <Timestamp time="0" id="4">
+    <Block rating="+">4</Block>
+    <Block rating="+">7</Block>
+  </Timestamp>
+  <Timestamp time="0" id="5">
+    <Verteidigung rating="+">2</Verteidigung>
+  </Timestamp>
+  <Timestamp time="0" id="6">
+    <Verteidigung rating="+">2</Verteidigung>
+  </Timestamp>
+  <Timestamp time="0" id="7">
+    <Block rating="+">4</Block>
+    <Block rating="+">7</Block>
+  </Timestamp>
+  <Timestamp time="0" id="8">
+    <Verteidigung rating="+">9</Verteidigung>
+  </Timestamp>
+  <Timestamp time="0" id="9">
+    <Block rating="+">1</Block>
+    <Block rating="+">2</Block>
+  </Timestamp>
+  <Timestamp time="0" id="10">
+    <Verteidigung rating="+">9</Verteidigung>
+  </Timestamp>
+  <Timestamp time="0" id="11">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="0" id="12">
+    <Zuspiel rating="+">3</Zuspiel>
+  </Timestamp>
+  <Timestamp time="8459" id="13">
+    <Aufschlag rating="+">3</Aufschlag>
+  </Timestamp>
+  <Timestamp time="15737" id="14">
+    <Block rating="+">4</Block>
+    <Block rating="+">7</Block>
+  </Timestamp>
+  <Timestamp time="33159" id="15">
+    <Annahme rating="+" Laufer="1">3</Annahme>
+  </Timestamp>
+</kiki>
+

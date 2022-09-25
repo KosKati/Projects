@@ -1,0 +1,342 @@
+<Dresden>
+  <Timestamp time="908.161" id="1">
+    <Angriff rating="+" Laufer="">2</Angriff>
+  </Timestamp>
+  <Timestamp time="1012.189" id="2">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="1020.335" id="3">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="1026.221" id="4">
+    <Angriff rating="+" Laufer="">2</Angriff>
+  </Timestamp>
+  <Timestamp time="1047.833" id="5">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="1073.617" id="6">
+    <Angriff rating="+" Laufer="">2</Angriff>
+  </Timestamp>
+  <Timestamp time="1126.964" id="7">
+    <Angriff rating="+" Laufer="">10</Angriff>
+  </Timestamp>
+  <Timestamp time="1134.417" id="8">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="1146.248" id="9">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="1178.619" id="10">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="1186.865" id="11">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="1264.404" id="12">
+    <Angriff rating="+" Laufer="">10</Angriff>
+  </Timestamp>
+  <Timestamp time="1289.771" id="13">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="1382.559" id="14">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="1386.483" id="15">
+    <Angriff rating="+" Laufer="">2</Angriff>
+  </Timestamp>
+  <Timestamp time="1409.087" id="16">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="1497.63" id="17">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="1546.458" id="18">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="1554.049" id="19">
+    <Angriff rating="+" Laufer="">2</Angriff>
+  </Timestamp>
+  <Timestamp time="1595.089" id="20">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="1666.897" id="21">
+    <Angriff rating="+" Laufer="">10</Angriff>
+  </Timestamp>
+  <Timestamp time="1823.049" id="22">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="1898.582" id="23">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="1902.474" id="24">
+    <Angriff rating="+" Laufer="">2</Angriff>
+  </Timestamp>
+  <Timestamp time="1950.09" id="25">
+    <Angriff rating="+" Laufer="">10</Angriff>
+  </Timestamp>
+  <Timestamp time="2010.649" id="26">
+    <Angriff rating="+" Laufer="">5</Angriff>
+  </Timestamp>
+  <Timestamp time="2021.345" id="27">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="2087.284" id="28">
+    <Angriff rating="+" Laufer="">10</Angriff>
+  </Timestamp>
+  <Timestamp time="2223.009" id="29">
+    <Angriff rating="+" Laufer="">5</Angriff>
+  </Timestamp>
+  <Timestamp time="2347.325" id="30">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="2373.709" id="31">
+    <Angriff rating="+" Laufer="">5</Angriff>
+  </Timestamp>
+  <Timestamp time="2423.386" id="32">
+    <Angriff rating="+" Laufer="">5</Angriff>
+  </Timestamp>
+  <Timestamp time="2456.29" id="33">
+    <Angriff rating="+" Laufer="">5</Angriff>
+  </Timestamp>
+  <Timestamp time="2485.06" id="34">
+    <Angriff rating="+" Laufer="">2</Angriff>
+  </Timestamp>
+  <Timestamp time="2497.709" id="35">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="2789.147" id="36">
+    <Angriff rating="+" Laufer="">2</Angriff>
+  </Timestamp>
+  <Timestamp time="2812.149" id="37">
+    <Angriff rating="+" Laufer="">4</Angriff>
+  </Timestamp>
+  <Timestamp time="2874.428" id="38">
+    <Angriff rating="+" Laufer="">2</Angriff>
+  </Timestamp>
+  <Timestamp time="2878.475" id="39">
+    <Angriff rating="+" Laufer="">4</Angriff>
+  </Timestamp>
+  <Timestamp time="2917.96" id="40">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="2970.062" id="41">
+    <Angriff rating="+" Laufer="">4</Angriff>
+  </Timestamp>
+  <Timestamp time="3144.006" id="42">
+    <Angriff rating="+" Laufer="">2</Angriff>
+  </Timestamp>
+  <Timestamp time="3213.844" id="43">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="3221.93" id="44">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="3225.963" id="45">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="3233.44" id="46">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="3262.64" id="47">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="3270.694" id="48">
+    <Angriff rating="+" Laufer="">2</Angriff>
+  </Timestamp>
+  <Timestamp time="3301.812" id="49">
+    <Angriff rating="+" Laufer="">2</Angriff>
+  </Timestamp>
+  <Timestamp time="3345.02" id="50">
+    <Angriff rating="+" Laufer="">2</Angriff>
+  </Timestamp>
+  <Timestamp time="3367.265" id="51">
+    <Angriff rating="+" Laufer="">4</Angriff>
+  </Timestamp>
+  <Timestamp time="3419.622" id="52">
+    <Angriff rating="+" Laufer="">2</Angriff>
+  </Timestamp>
+  <Timestamp time="3436.445" id="53">
+    <Angriff rating="+" Laufer="">2</Angriff>
+  </Timestamp>
+  <Timestamp time="3473.086" id="54">
+    <Angriff rating="+" Laufer="">4</Angriff>
+  </Timestamp>
+  <Timestamp time="3504.501" id="55">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="3641.274" id="56">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="3646.74" id="57">
+    <Angriff rating="+" Laufer="">2</Angriff>
+  </Timestamp>
+  <Timestamp time="3733.729" id="58">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="3824.934" id="59">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="3874.462" id="60">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="3881.681" id="61">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="3930.703" id="62">
+    <Angriff rating="+" Laufer="">2</Angriff>
+  </Timestamp>
+  <Timestamp time="3946.556" id="63">
+    <Angriff rating="+" Laufer="">2</Angriff>
+  </Timestamp>
+  <Timestamp time="4071.736" id="64">
+    <Angriff rating="+" Laufer="">6</Angriff>
+  </Timestamp>
+  <Timestamp time="4098.446" id="65">
+    <Angriff rating="+" Laufer="">4</Angriff>
+  </Timestamp>
+  <Timestamp time="4414.465" id="66">
+    <Angriff rating="+" Laufer="">2</Angriff>
+  </Timestamp>
+  <Timestamp time="4422.557" id="67">
+    <Angriff rating="+" Laufer="">4</Angriff>
+  </Timestamp>
+  <Timestamp time="4429.658" id="68">
+    <Angriff rating="+" Laufer="">4</Angriff>
+  </Timestamp>
+  <Timestamp time="4499.59" id="69">
+    <Angriff rating="+" Laufer="">4</Angriff>
+  </Timestamp>
+  <Timestamp time="4572.774" id="70">
+    <Angriff rating="+" Laufer="">6</Angriff>
+  </Timestamp>
+  <Timestamp time="4622.502" id="71">
+    <Angriff rating="+" Laufer="">4</Angriff>
+  </Timestamp>
+  <Timestamp time="4752.664" id="72">
+    <Angriff rating="+" Laufer="">7</Angriff>
+  </Timestamp>
+  <Timestamp time="4760.236" id="73">
+    <Angriff rating="+" Laufer="">4</Angriff>
+  </Timestamp>
+  <Timestamp time="4854.239" id="74">
+    <Angriff rating="+" Laufer="">7</Angriff>
+  </Timestamp>
+  <Timestamp time="4918.678" id="75">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="4924.921" id="76">
+    <Angriff rating="+" Laufer="">14</Angriff>
+  </Timestamp>
+  <Timestamp time="4929.482" id="77">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="5075.02" id="78">
+    <Angriff rating="+" Laufer="">4</Angriff>
+  </Timestamp>
+  <Timestamp time="5119.842" id="79">
+    <Angriff rating="+" Laufer="">14</Angriff>
+  </Timestamp>
+  <Timestamp time="5144.377" id="80">
+    <Angriff rating="+" Laufer="">4</Angriff>
+  </Timestamp>
+  <Timestamp time="5231.258" id="81">
+    <Angriff rating="+" Laufer="">4</Angriff>
+  </Timestamp>
+  <Timestamp time="5234.754" id="82">
+    <Angriff rating="+" Laufer="">2</Angriff>
+  </Timestamp>
+  <Timestamp time="5341.098" id="83">
+    <Angriff rating="+" Laufer="">4</Angriff>
+  </Timestamp>
+  <Timestamp time="5348.473" id="84">
+    <Angriff rating="+" Laufer="">2</Angriff>
+  </Timestamp>
+  <Timestamp time="5516.724" id="85">
+    <Angriff rating="+" Laufer="">4</Angriff>
+  </Timestamp>
+  <Timestamp time="5641.116" id="86">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="5731.565" id="87">
+    <Angriff rating="+" Laufer="">9</Angriff>
+  </Timestamp>
+  <Timestamp time="5969.252" id="88">
+    <Angriff rating="+" Laufer="">7</Angriff>
+  </Timestamp>
+  <Timestamp time="6018.078" id="89">
+    <Angriff rating="+" Laufer="">4</Angriff>
+  </Timestamp>
+  <Timestamp time="6048.525" id="90">
+    <Angriff rating="+" Laufer="">14</Angriff>
+  </Timestamp>
+  <Timestamp time="6128.468" id="91">
+    <Angriff rating="+" Laufer="">4</Angriff>
+  </Timestamp>
+  <Timestamp time="6136.704" id="92">
+    <Angriff rating="+" Laufer="">4</Angriff>
+  </Timestamp>
+  <Timestamp time="6230.517" id="93">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="6278.359" id="94">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="6361.718" id="95">
+    <Angriff rating="+" Laufer="">2</Angriff>
+  </Timestamp>
+  <Timestamp time="6420.185" id="96">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="6422.49" id="97">
+    <Angriff rating="+" Laufer="">7</Angriff>
+  </Timestamp>
+  <Timestamp time="6452.627" id="98">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="6479.933" id="99">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="6558.343" id="100">
+    <Angriff rating="+" Laufer="">2</Angriff>
+  </Timestamp>
+  <Timestamp time="6661.687" id="101">
+    <Angriff rating="+" Laufer="">2</Angriff>
+  </Timestamp>
+  <Timestamp time="6731.515" id="102">
+    <Angriff rating="+" Laufer="">9</Angriff>
+  </Timestamp>
+  <Timestamp time="6899.461" id="103">
+    <Angriff rating="+" Laufer="">13</Angriff>
+  </Timestamp>
+  <Timestamp time="6925.123" id="104">
+    <Angriff rating="+" Laufer="">14</Angriff>
+  </Timestamp>
+  <Timestamp time="6932.57" id="105">
+    <Angriff rating="+" Laufer="">5</Angriff>
+  </Timestamp>
+  <Timestamp time="6991.289" id="106">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="6999.174" id="107">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="7031.341" id="108">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="7072.389" id="109">
+    <Angriff rating="+" Laufer="">13</Angriff>
+  </Timestamp>
+  <Timestamp time="7084.204" id="110">
+    <Angriff rating="+" Laufer="">13</Angriff>
+  </Timestamp>
+  <Timestamp time="7117.946" id="111">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="7159.304" id="112">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+  <Timestamp time="7210.144" id="113">
+    <Angriff rating="+" Laufer="">8</Angriff>
+  </Timestamp>
+</Dresden>
+
