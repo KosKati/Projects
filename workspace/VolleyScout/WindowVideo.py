@@ -5,6 +5,7 @@ import datetime
 from functools import partial
 from random import randint
 
+
 from PyQt5.QtGui import QIcon
 from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent
 from PyQt5.QtMultimediaWidgets import QVideoWidget
@@ -23,6 +24,7 @@ import Keyboard_Functions
 import re
 import xml.etree.cElementTree as ET
 from ExtQlineEdit import *
+import LineUpFunctions 
 import glob
 import os
 
@@ -105,37 +107,7 @@ class WindowVideo(QWidget):
         hboxLayout.addWidget(self.slider)
 
         # nonlocal self.self.pos1
-        """
-        self.pos1 = QLabel("Pos1")
 
-        self.pos1.setText("Pos1")
-        self.pos1.setFixedSize(100, 200)
-        self.pos1.setAlignment(Qt.AlignCenter)
-        self.pos1.setStyleSheet("background-color: #ff9900; border: 2px; font: bold 14px;")
-
-        
-
-        self.pos2 = QLabel("Pos2")
-        self.pos2.setFixedSize(100, 200)
-        self.pos2.setAlignment(Qt.AlignCenter)
-        self.pos2.setStyleSheet("background-color: #ff9900; border: 2px; font: bold 14px;")
-        self.pos3 = QLabel("Pos3")
-        self.pos3.setFixedSize(100, 200)
-        self.pos3.setAlignment(Qt.AlignCenter)
-        self.pos3.setStyleSheet("background-color: #ff9900; border: 2px; font: bold 14px;")
-        self.pos4 = QLabel("Pos4")
-        self.pos4.setFixedSize(100, 200)
-        self.pos4.setAlignment(Qt.AlignCenter)
-        self.pos4.setStyleSheet("background-color: #ff9900; border: 2px; font: bold 14px;")
-        self.pos5 = QLabel("Pos5")
-        self.pos5.setFixedSize(100, 200)
-        self.pos5.setAlignment(Qt.AlignCenter)
-        self.pos5.setStyleSheet("background-color: #ff9900; border: 2px; font: bold 14px;")
-        self.pos6 = QLabel("Pos6")
-        self.pos6.setFixedSize(100, 200)
-        self.pos6.setAlignment(Qt.AlignCenter)
-        self.pos6.setStyleSheet("background-color: #ff9900; border: 2px; font: bold 14px;")
-        """
         self.libero1 = QLabel()
         self.libero1.setFixedSize(50, 100)
         self.libero1.setText("Libero")
@@ -143,21 +115,6 @@ class WindowVideo(QWidget):
         self.libero1.setStyleSheet("background-color: lightGray; border: 2px; font: bold 14px;")
 
         self.label_game = QLabel('Aktuelles Spiel :')
-        """
-        self.backRow = QHBoxLayout()
-
-        self.backRow.addWidget(self.pos5)
-        self.backRow.addWidget(self.pos6)
-        self.backRow.addWidget(self.pos1)
-        self.backRow.setContentsMargins(30, 10, 30, 80)
-        # self.backRow.setGeometry(0, 0, 300, 300)
-
-        self.frontRow = QHBoxLayout()
-        self.frontRow.addWidget(self.pos4)
-        self.frontRow.addWidget(self.pos3)
-        self.frontRow.addWidget(self.pos2)
-        self.frontRow.setContentsMargins(30, 130, 30, 10)
-        """
 
 
         self.liberoBox = QVBoxLayout()
@@ -231,7 +188,7 @@ class WindowVideo(QWidget):
         self.all_pos_labels.append(self.libero1)
 
         self.frame.setStyleSheet(
-            "background-repeat:no-repeat;background-position: center;background-image: url(Volleyball_Half_Court.png);")
+            "background-repeat:no-repeat;background-position: center;background-image: url(workspace/VolleyScout/Volleyball_Half_Court.png);")
         self.frame.setFixedSize(400, 400)
         self.court = QVBoxLayout()
         self.inner_court = QVBoxLayout()
@@ -246,7 +203,7 @@ class WindowVideo(QWidget):
         self.court.addLayout(self.liberoBox)
         self.court.addLayout(self.last_entrees)
 
-        self.container.setStyleSheet("background-repeat:no-repeat;background-position: center;background-image: url(Volleyball_Half_Court.png);")
+        self.container.setStyleSheet("background-repeat:no-repeat;background-position: center;background-image: url(workspace/VolleyScout/Volleyball_Half_Court.png);")
 
 
 
@@ -314,7 +271,6 @@ class WindowVideo(QWidget):
         msg.exec_()
 
     def libero_change(self):
-        print('1')
         dir = os.path.dirname(__file__)
         dir = dir + "/Gamedata/CurrentTeam"
         allLiberos = []
@@ -708,15 +664,11 @@ class WindowVideo(QWidget):
 
         self.slider.setValue(position)
 
-        # cur_time = str(datetime.timedelta(self.mediaPlayer.position()))
-        # self.label.setText(cur_time)
 
         self.label.setText(self.hhmmss(self.mediaPlayer.position()))
 
     def hhmmss(self, ms):
-        # s = 1000
-        # m = 60000
-        # h = 3600000
+
         s = round(ms / 1000)
         m, s = divmod(s, 60)
         h, m = divmod(m, 60)
@@ -795,7 +747,7 @@ class WindowVideo(QWidget):
     def setLineUp(self, btn):
 
         dlgLineUp = QDialog(self)
-        dlgLineUp.setFixedSize(300, 300)
+        dlgLineUp.setFixedSize(400, 300)
         dlgLineUp.setWindowTitle("Aufstellung bestimmen")
         playerlabel = QLabel("Spieler", dlgLineUp)
         playerlabel.move(10, 10)
@@ -814,6 +766,38 @@ class WindowVideo(QWidget):
         player6 = QComboBox(dlgLineUp)
         player6.move(10, 190)
         liberos = QComboBox(dlgLineUp)
+
+        player1_function = QComboBox(dlgLineUp)
+        player1_function.move(120, 40)
+        player2_function = QComboBox(dlgLineUp)
+        player2_function.move(120, 70)
+        player3_function = QComboBox(dlgLineUp)
+        player3_function.move(120, 100)
+        player4_function = QComboBox(dlgLineUp)
+        player4_function.move(120, 130)
+        player5_function = QComboBox(dlgLineUp)
+        player5_function.move(120, 160)
+        player6_function = QComboBox(dlgLineUp)
+        player6_function.move(120, 190)
+        
+        
+
+        all_player_function_comboboxes = [player1_function, player2_function, player3_function, player4_function, player5_function, player6_function]
+        for box in all_player_function_comboboxes:
+            box.addItems([" ", "Aussen", "Mitte", "Zuspiel", "Diagonal"])
+
+        
+        line_up_functions = LineUpFunctions()
+        
+        player1.currentTextChanged.connect(partial(line_up_functions.set_function, player1, player1_function ))
+        player2.currentTextChanged.connect(partial(self.set_function, player2, player2_function ))
+        player3.currentTextChanged.connect(partial(self.set_function, player3, player3_function ))
+        player4.currentTextChanged.connect(partial(self.set_function, player4, player4_function ))
+        player5.currentTextChanged.connect(partial(self.set_function, player5, player5_function ))
+        player6.currentTextChanged.connect(partial(self.set_function, player6, player6_function ))
+
+        liberos = QComboBox(dlgLineUp)
+
         liberos.move(200, 70)
         dir = os.path.dirname(__file__)
         dir = dir + "/Gamedata/CurrentTeam"
@@ -837,17 +821,17 @@ class WindowVideo(QWidget):
                     if row[1] == 'Libero':
                         liberos.addItem(row[0])
         positionLabel1 = QLabel("Pos 1", dlgLineUp)
-        positionLabel1.move(120, 40)
+        positionLabel1.move(80, 40)
         positionLabel2 = QLabel("Pos 2", dlgLineUp)
-        positionLabel2.move(120, 70)
+        positionLabel2.move(80, 70)
         positionLabel3 = QLabel("Pos 3", dlgLineUp)
-        positionLabel3.move(120, 100)
+        positionLabel3.move(80, 100)
         positionLabel4 = QLabel("Pos 4", dlgLineUp)
-        positionLabel4.move(120, 130)
+        positionLabel4.move(80, 130)
         positionLabel5 = QLabel("Pos 5", dlgLineUp)
-        positionLabel5.move(120, 160)
+        positionLabel5.move(80, 160)
         positionLabel6 = QLabel("Pos 6", dlgLineUp)
-        positionLabel6.move(120, 190)
+        positionLabel6.move(80, 190)
         liberoLabel = QLabel("Startlibero", dlgLineUp)
         liberoLabel.move(200, 40)
 
@@ -859,8 +843,7 @@ class WindowVideo(QWidget):
         buttonsetLineUp.clicked.connect(partial(self.set_lineup, self.pos4, player4, result2, self.currentLineUp, '4'))
         buttonsetLineUp.clicked.connect(partial(self.set_lineup, self.pos5, player5, result2, self.currentLineUp, '5'))
         buttonsetLineUp.clicked.connect(partial(self.set_lineup, self.pos6, player6, result2, self.currentLineUp, '6'))
-        buttonsetLineUp.clicked.connect(
-            partial(self.set_lineup, self.libero1, liberos, result2, self.currentLineUp, '0'))
+        buttonsetLineUp.clicked.connect(partial(self.set_lineup, self.libero1, liberos, result2, self.currentLineUp, '0'))
         buttonsetLineUp.clicked.connect(partial(self.enable_btn, btn))
         buttonsetLineUp.clicked.connect(dlgLineUp.close)
         buttonsetLineUp.clicked.connect(self.dlg_queue)
@@ -868,6 +851,23 @@ class WindowVideo(QWidget):
         btn_rndlineup.move(50, 250)
         btn_rndlineup.clicked.connect(partial(self.lineup_rnd, player1, player2, player3, player4, player5, player6))
         dlgLineUp.exec()
+
+    def set_function(self, combobox_number, combobox_player):
+        dir = os.path.dirname(__file__)
+        dir = dir + "/Gamedata/CurrentTeam"
+        allnumbers = []
+        
+        
+        with open(dir) as csv_file:
+            csv_reader_object = csv.reader(csv_file)
+
+            for row in csv_reader_object:
+                if len(row) == 2:
+                    if(row[0] == combobox_number.currentText()):
+                        combobox_player.setCurrentText(row[1])
+        
+        
+        
 
 
     def set_lineup(self, labelcourt, comboboxdialog, playerlist, lineup, pos):
