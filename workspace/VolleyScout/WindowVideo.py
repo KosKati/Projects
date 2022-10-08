@@ -106,7 +106,6 @@ class WindowVideo(QWidget):
         hboxLayout.addWidget(self.playBtn)
         hboxLayout.addWidget(self.slider)
 
-        # nonlocal self.self.pos1
 
         self.libero1 = QLabel()
         self.libero1.setFixedSize(50, 100)
@@ -505,7 +504,6 @@ class WindowVideo(QWidget):
                         whole_team.append(row[0])
 
         on_court = []
-        print("2")
         for i in self.currentLineUp[:6]:
             on_court.append(i[0])
         rest_team = self.Diff(whole_team, on_court)
@@ -787,14 +785,14 @@ class WindowVideo(QWidget):
             box.addItems([" ", "Aussen", "Mitte", "Zuspiel", "Diagonal"])
 
         
-        line_up_functions = LineUpFunctions()
+        line_up_functions = LineUpFunctions.LineUpFunctions()
         
         player1.currentTextChanged.connect(partial(line_up_functions.set_function, player1, player1_function ))
-        player2.currentTextChanged.connect(partial(self.set_function, player2, player2_function ))
-        player3.currentTextChanged.connect(partial(self.set_function, player3, player3_function ))
-        player4.currentTextChanged.connect(partial(self.set_function, player4, player4_function ))
-        player5.currentTextChanged.connect(partial(self.set_function, player5, player5_function ))
-        player6.currentTextChanged.connect(partial(self.set_function, player6, player6_function ))
+        player2.currentTextChanged.connect(partial(line_up_functions.set_function, player2, player2_function ))
+        player3.currentTextChanged.connect(partial(line_up_functions.set_function, player3, player3_function ))
+        player4.currentTextChanged.connect(partial(line_up_functions.set_function, player4, player4_function ))
+        player5.currentTextChanged.connect(partial(line_up_functions.set_function, player5, player5_function ))
+        player6.currentTextChanged.connect(partial(line_up_functions.set_function, player6, player6_function ))
 
         liberos = QComboBox(dlgLineUp)
 
@@ -834,16 +832,16 @@ class WindowVideo(QWidget):
         positionLabel6.move(80, 190)
         liberoLabel = QLabel("Startlibero", dlgLineUp)
         liberoLabel.move(200, 40)
-
+        self.currentLineUp = []
         buttonsetLineUp = QPushButton("Aufstellung bestätigen", dlgLineUp)
         buttonsetLineUp.move(120, 250)
-        buttonsetLineUp.clicked.connect(partial(self.set_lineup, self.pos1, player1, result2, self.currentLineUp, '1'))
-        buttonsetLineUp.clicked.connect(partial(self.set_lineup, self.pos2, player2, result2, self.currentLineUp, '2'))
-        buttonsetLineUp.clicked.connect(partial(self.set_lineup, self.pos3, player3, result2, self.currentLineUp, '3'))
-        buttonsetLineUp.clicked.connect(partial(self.set_lineup, self.pos4, player4, result2, self.currentLineUp, '4'))
-        buttonsetLineUp.clicked.connect(partial(self.set_lineup, self.pos5, player5, result2, self.currentLineUp, '5'))
-        buttonsetLineUp.clicked.connect(partial(self.set_lineup, self.pos6, player6, result2, self.currentLineUp, '6'))
-        buttonsetLineUp.clicked.connect(partial(self.set_lineup, self.libero1, liberos, result2, self.currentLineUp, '0'))
+        buttonsetLineUp.clicked.connect(partial(line_up_functions.set_lineup, self.pos1, player1, result2, self.currentLineUp, '1', player1_function))
+        buttonsetLineUp.clicked.connect(partial(line_up_functions.set_lineup, self.pos2, player2, result2, self.currentLineUp, '2', player2_function))
+        buttonsetLineUp.clicked.connect(partial(line_up_functions.set_lineup, self.pos3, player3, result2, self.currentLineUp, '3', player3_function))
+        buttonsetLineUp.clicked.connect(partial(line_up_functions.set_lineup, self.pos4, player4, result2, self.currentLineUp, '4', player4_function))
+        buttonsetLineUp.clicked.connect(partial(line_up_functions.set_lineup, self.pos5, player5, result2, self.currentLineUp, '5', player5_function))
+        buttonsetLineUp.clicked.connect(partial(line_up_functions.set_lineup, self.pos6, player6, result2, self.currentLineUp, '6', player6_function))
+        buttonsetLineUp.clicked.connect(partial(line_up_functions.set_lineup, self.libero1, liberos, result2, self.currentLineUp, '0', liberos))
         buttonsetLineUp.clicked.connect(partial(self.enable_btn, btn))
         buttonsetLineUp.clicked.connect(dlgLineUp.close)
         buttonsetLineUp.clicked.connect(self.dlg_queue)
@@ -851,57 +849,6 @@ class WindowVideo(QWidget):
         btn_rndlineup.move(50, 250)
         btn_rndlineup.clicked.connect(partial(self.lineup_rnd, player1, player2, player3, player4, player5, player6))
         dlgLineUp.exec()
-
-    def set_function(self, combobox_number, combobox_player):
-        dir = os.path.dirname(__file__)
-        dir = dir + "/Gamedata/CurrentTeam"
-        allnumbers = []
-        
-        
-        with open(dir) as csv_file:
-            csv_reader_object = csv.reader(csv_file)
-
-            for row in csv_reader_object:
-                if len(row) == 2:
-                    if(row[0] == combobox_number.currentText()):
-                        combobox_player.setCurrentText(row[1])
-        
-        
-        
-
-
-    def set_lineup(self, labelcourt, comboboxdialog, playerlist, lineup, pos):
-
-        tmp = []
-        tmp.append(comboboxdialog.currentText())
-        print('lineup')
-        print(lineup)
-        for item in playerlist:
-            print('for')
-            print(item[0])
-            print(comboboxdialog.currentText())
-            if item[0] == comboboxdialog.currentText():
-                tmp.append(item[1])
-        tmp.append(pos)
-        lineup.append(tmp)
-        print('lineup')
-        print(lineup)
-        for item in playerlist:
-
-            if item[0] == comboboxdialog.currentText() and item[1] == 'Zuspiel':
-                text = comboboxdialog.currentText() + "\n (Z)"
-                labelcourt.setText(text)
-                # lineup.append(tmp)
-                break
-
-            elif item[0] == comboboxdialog.currentText() and item[1] == 'Libero':
-                text = comboboxdialog.currentText()
-                labelcourt.setText(text)
-                # lineup.append(tmp)
-                break
-
-            else:
-                labelcourt.setText(comboboxdialog.currentText())
 
 
     def lineup_rnd(self, cb1, cb2, cb3, cb4, cb5, cb6):

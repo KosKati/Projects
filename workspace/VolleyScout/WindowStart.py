@@ -357,9 +357,6 @@ class Ui_MainWindow(object):
         self.pushButton_3 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_3.setGeometry(QtCore.QRect(470, 40, 75, 23))
         self.pushButton_3.setObjectName("pushButton_3")
-        # self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
-        # self.lineEdit.setGeometry(QtCore.QRect(100, 40, 141, 20))
-        # self.lineEdit.setObjectName("lineEdit")
         self.comboBox = QtWidgets.QComboBox(self.centralwidget)
         self.comboBox.setGeometry(QtCore.QRect(290, 40, 141, 22))
         self.comboBox.setObjectName("comboBox")
@@ -408,9 +405,6 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-    # combobox.setCurrentIndex(0)
-    # index = combobox.findText(str(combobox.currentText()))
-    # combobox.removeItem(index)
     def set_new_index(self):
         if self.comboBox.currentIndex() > 0:
             self.comboBox.setCurrentIndex(0)
@@ -502,13 +496,6 @@ class Ui_MainWindow(object):
 
             for b in allboxes:
                 b.setCurrentIndex(0)
-
-        #combobox.setCurrentIndex(0)
-        #index = combobox.findText(str(combobox.currentText()))
-        #combobox.removeItem(index)
-
-
-        print('Ende2')
 
     def create_new_team(self, team_name, allfields, allboxes, combobox):
 

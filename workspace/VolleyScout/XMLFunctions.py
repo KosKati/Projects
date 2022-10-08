@@ -153,8 +153,7 @@ def hhmmss(ms):
     # s = 1000
     # m = 60000
     # h = 3600000
-    s = round(ms / 1000)
-    m, s = divmod(s, 60)
+    m, s = divmod(ms, 60)
     h, m = divmod(m, 60)
     return ("%d:%02d:%02d" % (h, m, s)) if h else ("%d:%02d" % (m, s))
 
@@ -181,7 +180,7 @@ def tree_to_labels(filename):
         label_right.setMinimumHeight(20)
         com_line = QHBoxLayout()
 
-        var = int(elem.attributes['time'].value)
+        var = int(float(elem.attributes['time'].value))
         cur_time = hhmmss(var)
         label_string = 'id : ' + elem.attributes['id'].value + ' Zeit : ' + cur_time
         print('gefüllt' + label_string)
