@@ -1,0 +1,21 @@
+<game>
+    <players>
+        <number_1>
+            <service>0/0/0/0/0/0</service>
+            <reception>0/0/0/0/0/0</reception>
+            <set>0/0/0/0/0/0</set>
+            <attack>0/0/0/0/0/0</attack>
+            <block>0/0/0/0/0/0</block>
+           <defence>0/0/0/0/0/0</defence>
+        </number_1>
+        <number_2>
+            <service>0/0/0/0/0/0</service>
+            <reception>0/0/0/0/0/0</reception>
+            <set>0/0/0/0/0/0</set>
+            <attack>0/0/0/0/0/0</attack>
+            <block>0/0/0/0/0/0</block>
+           <defence>0/0/0/0/0/0</defence>
+        </number_2>
+    </players>
+
+</game>

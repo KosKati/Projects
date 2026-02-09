@@ -1,0 +1,2 @@
+Updateplayers -> Pfad nicht hardcoden
+xml_fuctions = XMLFuctions("./Games/testgame.xml")

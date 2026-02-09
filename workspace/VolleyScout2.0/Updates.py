@@ -1,6 +1,9 @@
 import os.path
 from pathlib import Path
-import MainWindow
+
+
+
+
 
 
 class Update:
@@ -14,22 +17,17 @@ class Update:
         self.gamename = gamename
         script_dir = Path(__file__)
         script_dir = Path(__file__).parent
-        print(script_dir)
         path = Path(script_dir, "Games")
-        print(path)
         directory = '.\\Games\\'
         filename = self.gamename
         file_path = os.path.join(path, filename)
         with open(file_path, "a") as f:
             f.write("Now the file has more content! Yeah GameTme")
 
-
-    def update_attack(self, player, value ):
-        label_attack = MainWindow.statistic_frame_players
-        label_a = label_attack.get_attack_label
-
-
-
+    def update_attack(self, player_number, value, label_attack):
+        for player in label_attack:
+            if player_number == player.text():
+                player.update_label("++", "5/1(100%)")
 
 
 update = Update(Path(__file__))

@@ -1,6 +1,11 @@
 from PyQt6.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout, QHBoxLayout, QGroupBox, QGridLayout, QLabel
 
 
+class StatsSets(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.all_stats_box = QGroupBox("Statistik (Sätze)")
+
 class StatHeader(QWidget):
     def __init__(self):
         super().__init__()
