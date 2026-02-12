@@ -4,11 +4,14 @@ from PyQt6.QtWidgets import QApplication, QGridLayout, QWidget, QLabel, QFormLay
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QPixmap
 from pathlib import Path
+
+from icecream import ic
+
 import JsonFunctions
 import os.path
 import json
 from Libero_Settings_Window import LiberoSubPlayerSettings
-
+from PlayerSubWindow import PlayerSubWindow
 
 
 class CourtWidgets(QWidget):
@@ -169,13 +172,21 @@ class CourtWidgets(QWidget):
         self.team_window.setLayout(team_layout)
         btn_rotation.clicked.connect(self.rotieren)
         btn_libero_settings.clicked.connect(self.show_libero_settings)
-        libero_1 = JsonFunctions.get_libero_1()
-        libero_2 = JsonFunctions.get_libero_2()
-        btn_libero_1.clicked.connect(lambda : self.libero_io(libero_1, libero_2 ))
-        btn_libero_2.clicked.connect(lambda : self.libero_io(libero_2 , libero_1))
+        btn_sub.clicked.connect(self.sub_players)
+
+        try:
+            libero_1 = JsonFunctions.get_libero_1()
+            libero_2 = JsonFunctions.get_libero_2()
+            btn_libero_1.clicked.connect(lambda : self.libero_io(libero_1, libero_2 ))
+            btn_libero_2.clicked.connect(lambda : self.libero_io(libero_2 , libero_1))
+        except:
+            print("No libero 1")
+
+    def sub_players(self):
+        self.sub_player_window = PlayerSubWindow(self.labels_court)
+        self.sub_player_window.show()
 
     def libero_io(self, libero_sub, libero_in):
-        print("start")
         with open("./Data/Line_up_data.json", "r+") as f:
             data = json.load(f)
 
@@ -189,41 +200,29 @@ class CourtWidgets(QWidget):
             # def libero_out_test(self, libero, sub, line_up, data_warte, data_sub ):
             if sub_1 in [line_up[0], line_up[4], line_up[5]]:
                 self.libero_in_test(libero_1, sub_1, line_up, data_warte, sub_1)
-
-                print(JsonFunctions.get_warte())
                 return None
 
             elif sub_2 in [line_up[0], line_up[4], line_up[5]]:
                 self.libero_in_test(libero_1, sub_2, line_up, data_warte, sub_2)
-                print("li0")
-                print(JsonFunctions.get_warte())
                 return None
 
             elif libero_1 in [line_up[0], line_up[4], line_up[5]]:
                 self.libero_out_test(libero_1, line_up, data_warte)
-                print("li1")
-                print(JsonFunctions.get_warte())
                 return None
 
             else:
                 if libero_2 in [line_up[0], line_up[4], line_up[5]]:
                     self.other_libero_in_test(libero_1, libero_2, line_up, data_warte)
-                    print("li2")
-                    print(JsonFunctions.get_warte())
                 return None
 
-    print("Ende")
     def other_libero_in_test(self, libero_1, libero_2, line_up, data_warte):
-        print("Check1")
 
         if libero_2 in [line_up[0], line_up[4], line_up[5]]:
-            print("Check2")
             idx = line_up.index(libero_2)
             line_up[idx] = libero_1
             libero_2 = f"{libero_2}(L)"
             for court_label in self.labels_court:
                 if court_label.text() == libero_2:
-                    print("Check2")
                     court_label.setText(f"{libero_1}(L)")
 
             JsonFunctions.set_line_up(line_up)
@@ -234,8 +233,7 @@ class CourtWidgets(QWidget):
             line_up[idx] = data_warte
             for court_label in self.labels_court:
                 if court_label.text() == f"{libero}(L)":
-                    print("hier drin?")
-                    print(data_warte)
+
                     court_label.setText(f"{data_warte}")
             JsonFunctions.set_warte("")
             JsonFunctions.set_line_up(line_up)
@@ -244,15 +242,13 @@ class CourtWidgets(QWidget):
         if sub in [line_up[0], line_up[4], line_up[5]]:
             idx = line_up.index(sub)
             JsonFunctions.set_warte(line_up[idx])
-
             # self.replace_warte(line_up[idx])
             line_up[idx] = libero
-            print("values")
+
             for court_label in self.labels_court:
                 if court_label.text() == data_sub:
                     court_label.setText(f"{libero}(L)")
             JsonFunctions.set_line_up(line_up)
-            print(JsonFunctions.get_warte())
 
     def replace_warte(self, new_value):
         with open("./Data/Line_up_data.json", "r") as f:
@@ -325,203 +321,3 @@ class CourtWidgets(QWidget):
             return True
 
         return False
-
-    """
-    def libero_1_io(self):
-        with open("./Data/Line_up_data.json", "r+") as f:
-            data = json.load(f)
-
-            line_up = data["line_up"]
-            libero_1 = data["libero1"]
-            libero_2 = data["libero2"]
-            sub_1 = data["sub1"]
-            sub_2 = data["sub2"]
-            data_warte = data["warte"]
-
-            #def libero_out_test(self, libero, sub, line_up, data_warte, data_sub ):
-            if sub_1 in [line_up[0], line_up[4], line_up[5]]:
-                self.libero_in_test(libero_1,  sub_1,line_up, data_warte, sub_1)
-                print(JsonFunctions.get_warte())
-            elif sub_2 in [line_up[0], line_up[4], line_up[5]]:
-                self.libero_in_test(libero_1, sub_2, line_up, data_warte, sub_2 )
-                print("li0")
-                print(JsonFunctions.get_warte())
-            elif libero_1 in [line_up[0], line_up[4], line_up[5]]:
-                self.libero_out_test(libero_1, line_up, data_warte)
-                print("li1")
-                print(JsonFunctions.get_warte())
-            else:
-                if libero_2 in [line_up[0], line_up[4], line_up[5]]:
-                    self.other_libero_in_test(libero_1, libero_2, line_up, data_warte)
-                    print("li2")
-                    print(JsonFunctions.get_warte())
-
-
-    def other_libero_in_test(self, libero_1, libero_2, line_up, data_warte):
-        if libero_2 in [line_up[0], line_up[4], line_up[5]]:
-            idx = line_up.index(libero_2)
-            line_up[idx] = libero_1
-            for court_label in self.labels_court:
-                if court_label.text() == f"{libero_1}(L)":
-                    court_label.setText(f"{libero_2}(L)")
-
-            JsonFunctions.set_line_up(line_up)
-
-    def libero_out_test(self, libero, line_up, data_warte):
-        if libero in [line_up[0], line_up[4], line_up[5]]:
-            idx = line_up.index(libero)
-            line_up[idx] = data_warte
-            for court_label in self.labels_court:
-                if court_label.text() == f"{libero}(L)":
-                    print("hier drin?")
-                    print(data_warte)
-                    court_label.setText(f"{data_warte}")
-            JsonFunctions.set_warte("")
-            JsonFunctions.set_line_up(line_up)
-
-    def libero_in_test(self, libero, sub, line_up, data_warte, data_sub ):
-        if sub in [line_up[0], line_up[4], line_up[5]]:
-            idx = line_up.index(sub)
-            JsonFunctions.set_warte(line_up[idx])
-
-            #self.replace_warte(line_up[idx])
-            line_up[idx] = libero
-            print("values")
-            for court_label in self.labels_court:
-                if court_label.text() == data_sub:
-                    court_label.setText(f"{libero}(L)")
-            JsonFunctions.set_line_up(line_up)
-            print(JsonFunctions.get_warte())
-
-    def replace_warte(self, new_value):
-        with open("./Data/Line_up_data.json", "r") as f:
-            data = json.load(f)
-            data["warte"] = new_value
-
-        with open("./Data/Line_up_data.json", "w") as f:
-            json.dump(data, f)
-
-    def show_libero_settings(self):
-        self.libero_settings = LiberoSubPlayerSettings(self.labels_court)
-        self.libero_settings.show()
-
-    def rotieren(self):
-        with open("./Data/Line_up_data.json", "r+") as f:
-            data = json.load(f)
-
-        line_up = data["line_up"]
-
-        tmp = line_up.pop(0)
-        line_up.append(tmp)
-        for i in range(0,len(self.labels_court)):
-            if self.check_libero(line_up[i]):
-                self.labels_court[i].setText(f"{str(line_up[i])}(L)")
-            else:
-                self.labels_court[i].setText(str(line_up[i]))
-
-        if self.check_libero(line_up[3]):
-            line_up[3] = data["warte"]
-
-            for court_label in self.labels_court:
-                if court_label.text() == f"{self.return_libero_number_in_court()}(L)":
-                    court_label.setText(f"{data["warte"] }")
-            data["warte"] = ""
-
-
-        field_key = 'line_up'
-        if field_key in data:
-            data[field_key] = line_up
-        file_path = "./Data/Line_up_data.json"
-        try:
-            os.remove(file_path)
-        except FileNotFoundError:
-            print(f"File '{file_path}' not found.")
-        with open("./Data/Line_up_data.json", "w") as f:
-            json.dump(data, f)
-
-    def return_libero_number_in_court(self):
-        with open("./Data/Line_up_data.json", "r+") as f:
-            data = json.load(f)
-
-        libero_1 = data["libero1"]
-        libero_2 = data["libero2"]
-        line_up = data["line_up"]
-
-        if libero_1 in line_up:
-            return libero_1
-        elif libero_2 in line_up:
-            return libero_2
-        else:
-            print("No libero")
-
-    def check_libero(self, number):
-        with open("./Data/Line_up_data.json", "r+") as f:
-            data = json.load(f)
-
-        libero_1 = data["libero1"]
-        libero_2 = data["libero2"]
-
-        if number == libero_1 or number == libero_2:
-            return True
-
-        return False
-
--------------------------------------------------------------------------------------------------------------------
-
-    def libero_1_io(self):
-        with open("./Data/Line_up_data.json", "r+") as f:
-            data = json.load(f)
-
-            line_up = data["line_up"]
-            libero_1 = data["libero1"]
-            libero_2 = data["libero2"]
-            sub_1 = data["sub1"]
-            sub_2 = data["sub2"]
-            print(sub_1)
-            print(sub_2)
-            print([line_up[0], line_up[4], line_up[5]])
-
-            if sub_1 in [line_up[0], line_up[4], line_up[5]]:
-                print(100)
-                idx = line_up.index(sub_1)
-                data["warte"] = line_up[idx]
-                line_up[idx] = libero_1
-                for court_label in self.labels_court:
-                    if court_label.text() == data["sub1"]:
-                        court_label.setText(f"{libero_1}(L)")
-            elif sub_2 in [line_up[0], line_up[4], line_up[5]]:
-                    print(200)
-                    idx = line_up.index(sub_2)
-                    data["warte"] = line_up[idx]
-                    line_up[idx] = libero_1
-                    for court_label in self.labels_court:
-                        if court_label.text() == data["sub2"]:
-                            court_label.setText(f"{libero_1}(L)")
-            elif libero_1 in [line_up[0], line_up[4], line_up[5]]:
-                    print(300)
-                    idx = line_up.index(libero_1)
-                    line_up[idx] = data["warte"]
-                    for court_label in self.labels_court:
-                        if court_label.text() == f"{data["libero1"]}(L)":
-                            court_label.setText(f"{data["warte"]}")
-                    data["warte"] = ""
-            elif libero_2 in [line_up[0], line_up[4], line_up[5]]:
-                    print(400)
-                    idx = line_up.index(libero_2)
-                    line_up[idx] = libero_1
-                    for court_label in self.labels_court:
-                        if court_label.text() == f"{data["libero2"]}(L)":
-                            court_label.setText(f"{data["libero1"]}(L)")
-                    data["warte"] = ""
-            else:
-                    print(4)
-                    if sub_2 in [line_up[0], line_up[4], line_up[5]]:
-                        idx = line_up.index(sub_2)
-                        data["warte"] = line_up[idx]
-                        line_up[idx] = libero_1
-"""
-
-
-
-
-

@@ -59,6 +59,12 @@ class Window(QWidget):
         self.slider = QSlider(Qt.Orientation.Horizontal)
         self.slider.setRange(0,0)
         self.slider.sliderMoved.connect(self.set_position)
+
+        #btn forward/backward
+        self.plus_five = QPushButton("+5")
+        self.minus_five = QPushButton("-5")
+
+        self.label_time = QLabel("0")
  
  
  
@@ -69,7 +75,11 @@ class Window(QWidget):
         self.hbox.addWidget(self.openBtn)
         self.hbox.addWidget(self.playBtn)
         self.hbox.addWidget(self.pauseBtn)
+        self.hbox.addWidget(self.plus_five)
+        self.hbox.addWidget(self.minus_five)
         self.hbox.addWidget(self.slider)
+        self.hbox.addWidget(self.label_time)
+
  
  
         self.vbox = QHBoxLayout()
@@ -100,12 +110,38 @@ class Window(QWidget):
  
  
         #media player signals
+        self.plus_five.clicked.connect(self.go_five_forward)
+        self.minus_five.clicked.connect(self.go_five_backward)
         self.mediaplayer.mediaStatusChanged.connect(self.mediastate_changed)
         self.mediaplayer.positionChanged.connect(self.position_changed)
+        self.mediaplayer.positionChanged.connect(self.update_position)
         self.mediaplayer.durationChanged.connect(self.duration_changed)
 
         #lineedit signals
         self.comline.returnPressed.connect(partial(self.execute_input,self.statistic_frame))
+
+    def hhmmss(self,ms):
+        # s = 1000
+        # m = 60000
+        # h = 3600000
+        s = round(ms / 1000)
+        m, s = divmod(s, 60)
+        h, m = divmod(m, 60)
+        return ("%d:%02d:%02d" % (h, m, s)) if h else ("%d:%02d" % (m, s))
+
+    def update_position(self, position):
+        if position >= 0:
+            self.label_time.setText(self.hhmmss(self.mediaplayer.position()))
+
+        self.slider.blockSignals(True)
+        self.slider.setValue(position)
+        self.slider.blockSignals(False)
+
+    def go_five_forward(self):
+        self.mediaplayer.setPosition(self.mediaplayer.position() + 9000)
+
+    def go_five_backward(self):
+        self.mediaplayer.setPosition(self.mediaplayer.position() - 9000)
 
     def open_video(self):
         filename, _ = QFileDialog.getOpenFileName(self, "Open Video")
@@ -167,6 +203,8 @@ class Window(QWidget):
                 for command in commands:
                     players_update = PlayersUpdate(command,statistic_frame,str(int(self.mediaplayer.position()/1000)), database_name)
                     players_update.start()
+
+        self.comline.clear()
 
     def set_set(self, current_set : str):
         with open("./Data/Current_Set.txt", "w") as f:  # in write mode

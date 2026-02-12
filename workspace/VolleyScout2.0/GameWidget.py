@@ -3,6 +3,7 @@ from NewGameWindow import NewGameWindow
 from NewTeamWindow import NewTeamWindow
 from SetLineUpWindow import SetLineUp
 from LoadTeamWindow import ImportWindow
+from VideoFilter import VideoFilter
 
 class GameButtons(QWidget) :
     #Änerung 2 def __init__(self, player_labels, court_players, players_frame, current_set_layout, old_body):
@@ -23,6 +24,7 @@ class GameButtons(QWidget) :
         self.game_team_btns = QVBoxLayout()
         self.new_game_Btn = QPushButton("Neues Spiel")
         self.loadBtn = QPushButton("Spiel laden")
+        self.video_filter_button = QPushButton("Video Filter")
         self.newTeamBtn = QPushButton("Neue Mannschaft")
         self.loadTeamBtn = QPushButton("Mannschaft laden")
         self.line_up_Btn = QPushButton("Startaufstelung eingeben")
@@ -32,6 +34,7 @@ class GameButtons(QWidget) :
 
         self.gameButtonBox.addWidget(self.new_game_Btn)
         self.gameButtonBox.addWidget(self.loadBtn)
+        self.gameButtonBox.addWidget(self.video_filter_button)
         self.teamButtonBox.addWidget(self.newTeamBtn)
         self.teamButtonBox.addWidget(self.loadTeamBtn)
         self.teamButtonBox.addWidget(self.line_up_Btn)
@@ -47,7 +50,11 @@ class GameButtons(QWidget) :
         self.loadBtn.clicked.connect(self.load_team)
         self.loadTeamBtn.clicked.connect(self.load_team)
         self.line_up_Btn.clicked.connect(self.set_line_up)
+        self.video_filter_button.clicked.connect(self.show_video_filter)
 
+    def show_video_filter(self):
+        self.vf = VideoFilter()
+        self.vf.show()
 
     def set_line_up(self):
         self.line_up = SetLineUp(self.court_players)

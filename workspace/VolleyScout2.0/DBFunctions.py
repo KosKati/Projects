@@ -2,6 +2,8 @@ import sqlite3
 from operator import index
 import json
 
+from icecream import ic
+
 
 def connect_db(function):
     def con(table_name, *args):
@@ -46,8 +48,6 @@ def insert_action_in_table(cursor, table_name, number, action, evaluation, times
         data = json.load(f)
 
         rotation = data["rotation"]
-    print("rotation")
-    print(rotation)
     cmd = "INSERT INTO " + table_name + " (NUMBER, ACTION, EVALUATION, ROTATION, TIMESTAMP, DETAILS, ID) VALUES (?, ?, ?, ?, ? ,?, ?)"
     cursor.execute(cmd, (number, action, evaluation, rotation, timestamp, details, new_id))
 
@@ -57,6 +57,15 @@ def get_all_table_names(db_name):
     connection = sqlite3.connect(db_name)
     cursor = connection.cursor()
     cursor.execute(f"SELECT name FROM sqlite_master WHERE type='table'")
+    rows = cursor.fetchall()
+    connection.close()
+
+    return rows
+
+def get_all_player_names(db_name, table_name):
+    connection = sqlite3.connect(db_name)
+    cursor = connection.cursor()
+    cursor.execute(f"SELECT Name FROM {table_name}")
     rows = cursor.fetchall()
     connection.close()
 
@@ -110,7 +119,6 @@ def insert_player_in_table(team_name, number, player_name):
     cmd = f"INSERT INTO {team_name} (NUMBER, NAME) VALUES ('{number}', '{player_name}')"
     #cursor.execute(cmd, (number, player_name))
     cursor.execute(cmd)
-    print("Ende")
     connection.close()
 
 
@@ -157,16 +165,12 @@ def update_stats_points_values(db_name, table_name, action):
 
     action_list = {"S" : 0, "A" : 1, "B" : 2, "GgFhl" : 3}
     old_values = get_stats_points_values(db_name, table_name).split("/")
-    print(old_values)
     new_value = int(old_values[action_list[action]]) + 1
     old_values[action_list[action]] = str(new_value)
     old_values = "/".join(old_values)
-    print(old_values)
     connection = sqlite3.connect('VolleyScout2.db')
     cursor = connection.cursor()
     cmd = f"UPDATE {table_name} SET {set_list[current_set]} = '{old_values}' WHERE Current_Set = '{current_set_list[current_set]}'"
-    print(type(old_values))
-    print(cmd)
     cursor.execute(cmd)
     connection.commit()
     connection.close()
@@ -245,12 +249,66 @@ def insert_start_values_game_stats(cursor, table_name):
 @connect_db
 def insert_start_values_rotation_stats(cursor, table_name):
 
-    cmd = f"UPDATE {table_name} SET rotation_1_difference = '0/0', rotation_2_difference = '0/0', rotation_3_difference = '0/0', rotation_4_difference = '0/0', rotation_5_difference = '0/0', rotation_6_difference = '0/0' WHERE game_stats = 'game_stats'"
+    cmd = f"UPDATE {table_name} SET rotation1_difference = '0/0', rotation2_difference = '0/0', rotation3_difference = '0/0', rotation4_difference = '0/0', rotation5_difference = '0/0', rotation6_difference = '0/0' WHERE game_stats = 'game_stats'"
+    cursor.execute(cmd)
+
+@connect_db
+def insert_start_values_reception_defense_points_stats(cursor, table_name):
+
+    cmd = f"UPDATE {table_name} SET  points_good_reception = '0/0/0/0',  points_bad_reception = '0/0/0/0',  points_defense = '0/0/0/0' WHERE game_stats = 'game_stats'"
+    cursor.execute(cmd)
+
+@connect_db
+def insert_start_values_so_bp_stats(cursor, table_name):
+
+    cmd = f"UPDATE {table_name} SET points_so = '0/0', points_bp = '0/0' WHERE game_stats = 'game_stats'"
     cursor.execute(cmd)
 
 @connect_db
 def update_stat_set(cursor, table_name, stat_value:str  , new_value:str):
     cmd = f"UPDATE {table_name} SET {stat_value} = '{new_value}'"
+    cursor.execute(cmd)
+
+@connect_db
+def get_rotation_difference_value(cursor, table_name, rotation:str):
+    cmd = f"Select {rotation} from {table_name} WHERE {rotation} IS NOT NULL"
+    cursor.execute(cmd)
+    rows = cursor.fetchall()
+    old_values = rows[0][0]
+    return old_values
+
+@connect_db
+def update_values_so_bp_stats(cursor, table_name, so_or_bp_value:str, new_value:str):
+
+    column_so_or_bp = f"points_{so_or_bp_value}"
+    cmd = f"UPDATE {table_name} SET {column_so_or_bp} = '{new_value}' WHERE game_stats = 'game_stats'"
+    cursor.execute(cmd)
+
+@connect_db
+def get_so_or_bp_value(cursor, table_name, so_or_bp_value:str):
+    column_name = f"points_{so_or_bp_value}"
+    cmd = f"Select {column_name } from {table_name} WHERE {column_name } IS NOT NULL"
+    cursor.execute(cmd)
+    rows = cursor.fetchall()
+    old_values = rows[0][0]
+    return old_values
+
+@connect_db
+def get_game_stat_value(cursor, table_name, stat:str):
+    cmd = f"Select {stat} from {table_name} WHERE {stat} IS NOT NULL"
+    cursor.execute(cmd)
+    rows = cursor.fetchall()
+    old_values = rows[0][0]
+    return old_values
+
+@connect_db
+def update_game_stat_value(cursor, table_name, stat:str  , new_value:str):
+    cmd = f"UPDATE {table_name} SET {stat} = '{new_value}' WHERE game_stats = 'game_stats'"
+    cursor.execute(cmd)
+
+@connect_db
+def update_rotation_difference_value(cursor, table_name, rotation:str  , new_value:str):
+    cmd = f"UPDATE {table_name} SET {rotation} = '{new_value}' WHERE game_stats = 'game_stats'"
     cursor.execute(cmd)
 """
 @connect_db
@@ -259,11 +317,19 @@ def get_stat_set(cursor, table_name, stat_value:str :
     cursor.execute(cmd)
 """
 
-def insert_number(table_name, number) -> None:
+def insert_number(table_name, number, name) -> None:
     connection = sqlite3.connect('VolleyScout2.db')
     cursor = connection.cursor()
-    cmd = f"INSERT INTO {table_name} (Number) VALUES (?)"
-    cursor.execute(cmd, [number])
+    cmd = f"INSERT INTO {table_name} (Number, Name) VALUES (?,?)"
+    cursor.execute(cmd, (number, name))
+    connection.commit()
+    connection.close()
+
+def insert_name(table_name, name) -> None:
+    connection = sqlite3.connect('VolleyScout2.db')
+    cursor = connection.cursor()
+    cmd = f"INSERT INTO {table_name} (Name) VALUES (?)"
+    cursor.execute(cmd, name)
     connection.commit()
     connection.close()
 

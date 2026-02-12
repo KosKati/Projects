@@ -4,6 +4,8 @@ import DBFunctions
 import re
 import json
 import os
+from icecream import ic
+import JsonFunctions
 
 from workspace.VolleyScout.Testing import result
 
@@ -40,14 +42,18 @@ class PlayersUpdate:
             self.update_label_service()
             self.update_label_points()
             self.set_rotation_to_default()
+            self.set_so_or_db_value()
 
         if self.action == "R":
             self.set_possible_rotation()
             self.update_db_stats_reception()
             self.update_label_reception()
+            self.set_situation_to_json()
+            self.set_so_or_db_value()
 
         if self.action == "D":
             self.set_rotation_to_defense()
+            self.set_situation_to_json()
 
         if self.action == "A":
             self.set_possible_rotation()
@@ -55,24 +61,179 @@ class PlayersUpdate:
             self.update_label_attack()
             self.update_label_points()
             self.update_set_stat("A")
+            if self.rating in ["++", "--"]:
+                self.set_possible_rotation_state()
+                self.set_new_rotation_points_value()
+            self.update_db_points_reception_defense()
+            self.update_labels_points_reception_defense()
+            ic()
+            self.update_db_so_or_db_value()
+            self.update_db_or_so_labels()
+            ic()
         self.insert_action_db()
-
         if self.action in ["S", "A", "B"] and self.rating == "++":
             self.update_db_set_stats_points()
             self.update_set_stat(self.action)
-
         if self.action == "GgFhl":
             self.update_db_set_stats_points()
             self.update_set_stat(self.action)
         if not self.action in ["Z", "D"]:
-            self.update_db_stats_action()
-            self.update_label_set_stats()
+            db_string = f"{self.action}{self.rating}"
+            if db_string in ["S++", "S--", "R++", "R+", "R--", "A++", "A--", "A-", "B++"]:
+                self.update_db_stats_action()
+                self.update_label_set_stats()
+
+    def update_db_or_so_labels(self):
+        so_or_bp_value = JsonFunctions.get_so_or_bp()
+        ic(so_or_bp_value)
+        db_value_so_or_bp = DBFunctions.get_so_or_bp_value(self.table_name, so_or_bp_value)
+        ic(db_value_so_or_bp)
+        labels_so_or_bp = None
+        string_label_3_1 = ""
+        string_label_3_2 = ""
+        if so_or_bp_value == "so":
+            labels_so_or_bp = self.players_label.rece_window[1]
+        if so_or_bp_value == "bp":
+            labels_so_or_bp = self.players_label.serv_window[1]
+        ic()
+        ic(labels_so_or_bp)
+        ic()
+        db_value_so_or_bp = db_value_so_or_bp.split("/")
+        labels_so_or_bp[0].setText(db_value_so_or_bp[1])
+        if int(db_value_so_or_bp[0]) > 0 :
+            label3_value = str(round( (int(db_value_so_or_bp[1])/int(db_value_so_or_bp[0])),2))
+        else:
+            label3_value = "0.00"
+        ic(label3_value)
+        labels_so_or_bp[1].setText(db_value_so_or_bp[0])
+        if so_or_bp_value == "bp":
+            string_label_3_1 = "Auf"
+            string_label_3_2 = "BP"
+
+        if so_or_bp_value == "so":
+            string_label_3_1 = "Ann"
+            string_label_3_2 = "P"
+        ic()
+        string_label_3 = f"Pro {label3_value} {string_label_3_1} \n 1 {string_label_3_2}"
+        labels_so_or_bp[2].setText(string_label_3)
+        ic()
+
+    def update_db_so_or_db_value(self):
+        so_or_bp_value = JsonFunctions.get_so_or_bp()
+        old_value = DBFunctions.get_so_or_bp_value(self.table_name,so_or_bp_value)
+        attack_rating_value = f"{self.action}{self.rating}"
+        ic(attack_rating_value)
+        old_value = old_value.split("/")
+        if attack_rating_value == "A++":
+            old_value[0] = str(int(old_value[0]) + 1)
+            old_value[1] = str(int(old_value[1]) + 1)
+        if attack_rating_value in ["A+", "A--", "A-", "A0"]:
+            old_value[1] = str(int(old_value[1]) + 1)
+
+        new_value = "/".join(old_value)
+
+        DBFunctions.update_values_so_bp_stats(self.table_name, so_or_bp_value, new_value)
+
+
+    def set_so_or_db_value(self):
+        if self.action == "S":
+            JsonFunctions.set_so_or_bp("bp")
+        if self.action == "R":
+            JsonFunctions.set_so_or_bp("so")
+
+    def update_labels_points_reception_defense(self):
+        labels = None
+        situation = JsonFunctions.get_situation()
+        ic(situation)
+        db_column_name = f"points_{situation}"
+        ic(db_column_name)
+        old_value = DBFunctions.get_game_stat_value(self.table_name,db_column_name)
+        ic(old_value)
+        old_value = old_value.split("/")
+        ic(old_value)
+        if situation == "good_reception":
+            labels = self.players_label.game_stats.good_reception_labels
+        if situation == "bad_reception":
+            labels = self.players_label.game_stats.bad_reception_labels
+        if situation == "defense":
+            ic(situation)
+            labels = self.players_label.game_stats.defense_labels
+        for i in [0,1,3]:
+            labels[i].setText(old_value[i])
+        label2_value = str(int(int(old_value[2])/int(old_value[3])*100))
+        labels[2].setText(label2_value)
+
+
+
+    def update_db_points_reception_defense(self):
+        situation = JsonFunctions.get_situation()
+        db_column_name = f"points_{situation}"
+        old_value = DBFunctions.get_game_stat_value(self.table_name,db_column_name)
+        old_value = old_value.split("/")
+        ic(old_value)
+        if self.rating == "++":
+            old_value[3] = str(int(old_value[3]) + 1)
+            old_value[2] = str(int(old_value[2]) + 1)
+        if self.rating == "--":
+            old_value[3] = str(int(old_value[3]) + 1)
+            old_value[0] = str(int(old_value[0]) + 1)
+
+        if self.rating == "-":
+            old_value[3] = str(int(old_value[3]) + 1)
+            old_value[1] = str(int(old_value[1]) + 1)
+
+        if self.rating in ["0", "+"]:
+            old_value[3] = str(int(old_value[3]) + 1)
+
+        new_value = "/".join(old_value)
+        DBFunctions.update_game_stat_value(self.table_name, db_column_name, new_value)
+
+
+    def set_situation_to_json(self):
+        current_situation = ""
+        if self.action == "R":
+            if self.rating == "++" or self.rating == "+":
+                current_situation = "good_reception"
+            if self.rating == "-" or self.rating == "0":
+                current_situation = "bad_reception"
+
+        if self.action == "D":
+            current_situation = "defense"
+
+        JsonFunctions.set_situation(current_situation)
+
+    def set_new_rotation_points_value(self):
+        db_value = f"{self.rotation}_difference"
+        label_position_list = {"rotation1" : 0, "rotation2" : 1, "rotation3" : 2, "rotation4" : 3, "rotation5" : 4, "rotation6" : 5}
+        # For the test value = DBFunctions.get_rotation_difference_value(self.table_name, db_value)
+        value = DBFunctions.get_game_stat_value(self.table_name, db_value)
+        difference_rotation_points = str(int(value[0]) - int(value[2]))
+        id(self.players_label.rotation_window[1])
+        self.players_label.rotation_window[1][label_position_list[self.rotation]].setText(difference_rotation_points)
+
+    def set_possible_rotation_state(self):
+        rotations = ["rotation1", "rotation2", "rotation3", "rotation4", "rotation5", "rotation6"]
+        new_value = None
+        if self.rotation in rotations:
+            db_value = f"{self.rotation}_difference"
+            #For the test old_value = DBFunctions.get_rotation_difference_value(self.table_name, db_value)
+            old_value = DBFunctions.get_game_stat_value(self.table_name, db_value)
+            if self.rating == "++":
+                new_value = str(int(old_value[0]) + 1) +"/" + old_value[2]
+            if self.rating == "--":
+                new_value = old_value[0] + "/" + str(int(old_value[2]) + 1)
+            DBFunctions.update_rotation_difference_value(self.table_name, db_value, new_value)
 
     def set_rotation_to_defense(self):
         with open("./Data/Line_up_data.json", "r+") as f:
             data = json.load(f)
         data["rotation"] = "defense"
-        with open("./Data/Line_up_data.json", "r+") as f:
+        file_path = "./Data/Line_up_data.json"
+        try:
+            os.remove(file_path)
+        except FileNotFoundError:
+            print(f"File '{file_path}' not found.")
+        with open("./Data/Line_up_data.json", "w") as f:
             json.dump(data, f)
 
     def set_possible_rotation(self):
@@ -83,12 +244,17 @@ class PlayersUpdate:
         setter = data["setter"]
 
         idx = line_up.index(setter)
+        file_path = "./Data/Line_up_data.json"
+        try:
+            os.remove(file_path)
+        except FileNotFoundError:
+            print(f"File '{file_path}' not found.")
 
 
         idx = idx + 1
         self.rotation ="rotation"+str(idx)
         data["rotation"] = "rotation"+str(idx)
-        with open("./Data/Line_up_data.json", "r+") as f:
+        with open("./Data/Line_up_data.json", "w") as f:
             json.dump(data, f)
 
     def set_rotation_to_default(self):
@@ -153,11 +319,10 @@ class PlayersUpdate:
 
     def insert_action_db(self):
         dict_values = {"S": "Service", "R": "Reception", "A": "Attack", "B": "Block", "Z":"Setting", "D":"Defense"}
-        print("Yo")
-        print(dict_values[self.action])
+        ic()
+        ic([self.player_number, dict_values[self.action], self.rating])
         DBFunctions.insert_action_in_table(self.table_name, self.player_number, dict_values[self.action], self.rating, self.time_stamp)
-        print("Yo2")
-
+        ic()
     def update_db_stats_attack(self):
         #Format Ges/Fhl/Blo/Pkt/Pkt%
 
@@ -324,23 +489,4 @@ class PlayersUpdate:
         self.command = self.command[1:]
 
     def extract_rating(self):
-        self.rating = self.command[0:]
-
-
-
-
-
-
-
-
-    def update_percent(self,action):
-        pass
-
-
-
-
-    def update_right_label(self,action :str, player_number :str):
-        pass
-
-    def update_values(self, command, action):
-        pass
+        self.rating = str(self.command[0:])

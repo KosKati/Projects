@@ -1,6 +1,9 @@
 from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QLabel, QVBoxLayout, QWidget, QLineEdit, \
     QMessageBox, QComboBox
 import sqlite3
+
+from icecream import ic
+
 import DBFunctions
 import sys
 
@@ -62,7 +65,6 @@ class NewGameWindow(QWidget):
 
             self.show_warning("Tabelle existiert bereits!")
         else:
-            print("check1")
             self.create_table()
 
             self.insert_stats_values()
@@ -84,12 +86,19 @@ class NewGameWindow(QWidget):
 
     def update_stat_frame(self):
         numbers = []
+        names = []
         rows = DBFunctions.get_all_numbers('Volleyscout2.db',self.table_name)
         for i in range(0, len(rows)):
             numbers.append(rows[i][0])
 
+        rows_names = DBFunctions.get_all_player_names('Volleyscout2.db',self.table_name)
+        for i in range(0, len(rows)):
+            names.append(rows_names[i][0])
+
         numbers = list(filter(lambda num: num is not None, numbers))
+        names = list(filter(lambda num: num is not None, names))
         body_new = self.player_stat_frame.create_body(numbers)
+        self.player_stat_frame.insert_names_to_label(names)
         self.current_set_layout.replaceWidget(self.old_body, body_new)
 
         self.old_body.hide()
@@ -97,9 +106,11 @@ class NewGameWindow(QWidget):
 
     def insert_stats_values(self):
         values = DBFunctions.get_team_values("Teams.db", self.team_box.currentText())
-
+        print("val")
+        print(values[1][0])
         for i in range(0, len(values)):
-            DBFunctions.insert_number(self.table_name, str(values[i][1]))
+            DBFunctions.insert_number(self.table_name, str(values[i][1]), str(values[i][0]))
+
 
         rows = DBFunctions.get_all_numbers('Volleyscout2.db', self.table_name )
 
@@ -110,9 +121,9 @@ class NewGameWindow(QWidget):
         DBFunctions.insert_start_values_set(self.table_name)
         DBFunctions.insert_start_values_game_stats(self.table_name)
         DBFunctions.insert_start_values_sets_stats(self.table_name)
-        print("ja")
         DBFunctions.insert_start_values_rotation_stats(self.table_name)
-        print("nein")
+        DBFunctions.insert_start_values_reception_defense_points_stats(self.table_name)
+        DBFunctions.insert_start_values_so_bp_stats(self.table_name)
 
 
     def set_label_values(self):
@@ -178,6 +189,7 @@ class NewGameWindow(QWidget):
             cursor = connection.cursor()
             cursor.execute(f'''CREATE TABLE IF NOT EXISTS  {self.table_name} (
                                 Number TEXT,
+                                Name TEXT,
                                 Action TEXT,
                                 Evaluation TEXT,
                                 Rotation TEXT,
@@ -216,12 +228,17 @@ class NewGameWindow(QWidget):
                                 Set5_attack TEXT,
                                 Set5_block TEXT,
                                 game_stats TEXT,
-                                rotation_1_difference TEXT,
-                                rotation_2_difference TEXT,
-                                rotation_3_difference TEXT,
-                                rotation_4_difference TEXT,
-                                rotation_5_difference TEXT,
-                                rotation_6_difference TEXT)''')
+                                rotation1_difference TEXT,
+                                rotation2_difference TEXT,
+                                rotation3_difference TEXT,
+                                rotation4_difference TEXT,
+                                rotation5_difference TEXT,
+                                rotation6_difference TEXT,
+                                points_good_reception TEXT,
+                                points_bad_reception TEXT,
+                                points_defense TEXT,
+                                points_so TEXT,
+                                points_bp TEXT)''')
             connection.close()
 
 

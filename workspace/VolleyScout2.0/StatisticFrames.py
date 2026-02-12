@@ -232,6 +232,10 @@ class PlayerFrame(QWidget):
         self.header.layout().setSpacing(0)
         return  self.stat_header
 
+    def insert_names_to_label(self, names_list):
+        for i in range(0, len(names_list)):
+            self.stat_list[i].result_labels_name[0].setText(names_list[i])
+
     def create_body(self, players_numbers_list):
 
         self.body_row = QVBoxLayout()
@@ -243,6 +247,7 @@ class PlayerFrame(QWidget):
         for i in range(0,len(players_numbers_list)):
 
             self.stat_list[i].result_labels_number[0].setText(players_numbers_list[i])
+
             self.stat_list[i].label_number.setFixedWidth(40)
             self.stat_list[i].label_name.setFixedWidth(133)
             self.stat_list[i].label_set.setFixedWidth(133)
@@ -334,22 +339,27 @@ class PlayerFrame(QWidget):
 class GameStats(QWidget):
     def __init__(self):
         super(GameStats, self).__init__()
-
-
+        self.stat_serv_rece_labels = None
+        self.defense_labels = None
+        self.bad_reception_labels = None
+        self.good_reception_labels = None
 
     def create_rotation_points(self):
         self.result_box = QVBoxLayout()
         self.tile = QLabel("Punkte \n Z in Diff")
         self.result_box.addWidget(self.tile)
         self.rotation_points_labels = []
+        rotations_names_list = ["1", "6", "5", "4", "3", "2"]
         for i in reversed(range(6)):
             self.tmpbox = QHBoxLayout()
-            self.tmp_label_position = QLabel(str(i))
+            self.tmp_label_position = QLabel(rotations_names_list[i])
             self.tmp_label_points = QLabel(".")
             self.rotation_points_labels.append(self.tmp_label_points)
             self.tmpbox.addWidget(self.tmp_label_position)
             self.tmpbox.addWidget(self.tmp_label_points)
             self.result_box.addLayout(self.tmpbox)
+
+
 
         return [self.result_box, self.rotation_points_labels]
 
@@ -383,6 +393,114 @@ class GameStats(QWidget):
         self.result_box.addLayout(self.result_layout)
 
         return [self.result_box, self.stat_serv_rece_labels]
+
+    def create_reception_attack_frame(self):
+        self.reception_attack_layout = QVBoxLayout()
+        self.good_reception_layout = QHBoxLayout()
+        self.bad_reception_layout = QHBoxLayout()
+        self.defense_reception_layout = QHBoxLayout()
+        self.good_reception_labels = []
+        self.bad_reception_labels = []
+        self.defense_labels = []
+
+        self.label_title_good_reception = QLabel("Dir. Pkt. nach guter Annhame (+, ++, 1.Angriff)")
+        self.label_error_title_good = QLabel("Fhl: ")
+        self.label_error_title_good.setContentsMargins(30, 0, 0, 0)
+        self.label_error_value_good = QLabel(".")
+        self.label_blocked_title_good = QLabel("Blo: ")
+        self.label_blocked_title_good.setContentsMargins(30, 0, 0, 0)
+        self.label_blocked_value_good = QLabel(".")
+        self.label_points_percent_title_good = QLabel("Pkt%: ")
+        self.label_points_percent_title_good.setContentsMargins(30, 0, 0, 0)
+        self.label_points_percent_value_good = QLabel(".")
+        self.label_total_title_good = QLabel("Ges. : ")
+        self.label_total_title_good.setContentsMargins(30, 0, 0, 0)
+        self.label_total_value_good = QLabel(".")
+
+        self.good_reception_layout.addWidget(self.label_title_good_reception)
+        self.good_reception_layout.addWidget(self.label_error_title_good)
+        self.good_reception_layout.addWidget(self.label_error_value_good)
+        self.good_reception_layout.addWidget(self.label_blocked_title_good)
+        self.good_reception_layout.addWidget(self.label_blocked_value_good)
+        self.good_reception_layout.addWidget(self.label_points_percent_title_good)
+        self.good_reception_layout.addWidget(self.label_points_percent_value_good)
+        self.good_reception_layout.addWidget(self.label_total_title_good)
+        self.good_reception_layout.addWidget(self.label_total_value_good)
+
+        self.good_reception_labels.append(self.label_error_value_good)
+        self.good_reception_labels.append(self.label_blocked_value_good)
+        self.good_reception_labels.append(self.label_points_percent_value_good)
+        self.good_reception_labels.append(self.label_total_value_good)
+
+        self.label_title_bad_reception = QLabel("Dir. Pkt. nach schlechter Annhame (0, -, 1.Angriff)")
+        self.label_error_title_bad = QLabel("Fhl: ")
+        self.label_error_title_bad.setContentsMargins(30, 0, 0, 0)
+        self.label_error_value_bad = QLabel(".")
+        self.label_blocked_title_bad = QLabel("Blo: ")
+        self.label_blocked_title_bad.setContentsMargins(30, 0, 0, 0)
+        self.label_blocked_value_bad = QLabel(".")
+        self.label_points_percent_title_bad = QLabel("Pkt%: ")
+        self.label_points_percent_title_bad.setContentsMargins(30, 0, 0, 0)
+        self.label_points_percent_value_bad = QLabel(".")
+        self.label_total_title_bad = QLabel("Ges. : ")
+        self.label_total_title_bad.setContentsMargins(30, 0, 0, 0)
+        self.label_total_value_bad = QLabel(".")
+
+        self.bad_reception_layout.addWidget(self.label_title_bad_reception)
+        self.bad_reception_layout.addWidget(self.label_error_title_bad)
+        self.bad_reception_layout.addWidget(self.label_error_value_bad)
+        self.bad_reception_layout.addWidget(self.label_blocked_title_bad)
+        self.bad_reception_layout.addWidget(self.label_blocked_value_bad)
+        self.bad_reception_layout.addWidget(self.label_points_percent_title_bad)
+        self.bad_reception_layout.addWidget(self.label_points_percent_value_bad)
+        self.bad_reception_layout.addWidget(self.label_total_title_bad)
+        self.bad_reception_layout.addWidget(self.label_total_value_bad)
+
+
+        self.bad_reception_labels.append(self.label_error_value_bad)
+        self.bad_reception_labels.append(self.label_blocked_value_bad)
+        self.bad_reception_labels.append(self.label_points_percent_value_bad)
+        self.bad_reception_labels.append(self.label_total_value_bad)
+
+
+        self.defense_label_title = QLabel("Dir. Pkt. nach Abwehr")
+        self.defense_label_error_title = QLabel("Fhl: ")
+        self.defense_label_error_title.setContentsMargins(30, 0, 0, 0)
+        self.defense_label_error_value = QLabel(".")
+        self.defense_label_blocked_title= QLabel("Blo: ")
+        self.defense_label_blocked_value = QLabel(".")
+        self.defense_label_points_percent_title = QLabel("Pkt%: ")
+        self.defense_label_points_percent_value = QLabel(".")
+        self.defense_label_total_title = QLabel("Ges. : ")
+        self.defense_label_total_value= QLabel(".")
+
+
+
+        self.defense_reception_layout.addWidget(self.defense_label_title)
+        self.defense_reception_layout.addWidget(self.defense_label_error_title)
+        self.defense_reception_layout.addWidget(self.defense_label_error_value)
+        self.defense_reception_layout.addWidget(self.defense_label_blocked_title)
+        self.defense_reception_layout.addWidget(self.defense_label_blocked_value)
+        self.defense_reception_layout.addWidget(self.defense_label_points_percent_title)
+        self.defense_reception_layout.addWidget(self.defense_label_points_percent_value)
+        self.defense_reception_layout.addWidget(self.defense_label_total_title)
+        self.defense_reception_layout.addWidget(self.defense_label_total_value)
+
+        self.defense_labels.append(self.defense_label_error_value)
+        self.defense_labels.append(self.defense_label_blocked_value)
+        self.defense_labels.append(self.defense_label_points_percent_value)
+        self.defense_labels.append(self.defense_label_total_value)
+
+        self.good_reception_layout.addStretch()
+
+        self.reception_attack_layout.addLayout(self.good_reception_layout)
+        self.reception_attack_layout.addLayout(self.bad_reception_layout)
+        self.reception_attack_layout.addLayout(self.defense_reception_layout)
+
+        return self.reception_attack_layout
+
+
+
 
 
 
@@ -423,12 +541,14 @@ class StatisticFrame(QWidget):
         self.current_game_layout = QGridLayout()
 
         self.game_stats = GameStats()
+        self.points_reception_defense = self.game_stats.create_reception_attack_frame()
         self.rotation_window = self.game_stats.create_rotation_points()
         self.rece_window = self.game_stats.create_serv_rece_points("Annahmen", "SO-Punkte", "Ann", "Punkt")
         self.serv_window = self.game_stats.create_serv_rece_points("Aufschlag", "BP", "Auf", "BP")
         self.current_game_layout.addLayout(self.rotation_window[0], 0, 0, 1, 2)
         self.current_game_layout.addLayout(self.rece_window[0], 0, 2, 1, 2)
         self.current_game_layout.addLayout(self.serv_window[0], 0, 4, 1, 2)
+        self.current_game_layout.addLayout(self.points_reception_defense, 1, 0, 1, 2)
 
         self.current_game.setLayout(self.current_game_layout)
 

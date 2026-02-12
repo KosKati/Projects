@@ -35,6 +35,7 @@ class SetLineUp(QWidget):
         self.setter_layout = QHBoxLayout()
         self.label_setter = QLabel("Zuspieler (Nummer):")
         self.line_edit_setter = QLineEdit()
+        self.line_edit_setter.setText("9")
         self.line_edit_setter.setFixedWidth(40)
         self.setter_layout.addWidget(self.label_setter)
         self.setter_layout.addWidget(self.line_edit_setter)

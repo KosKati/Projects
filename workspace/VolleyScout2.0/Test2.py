@@ -115,5 +115,12 @@ print(line_up)
 line_up.append(tmp)
 print(line_up)
 """
+connection = sqlite3.connect("VolleyScout2.db")
+cursor = connection.cursor()
+#listOfTables = []
 
-DBFunctions.insert_start_values_rotation_stats("game_data_8080_808_8")
+listOfTables = cursor.execute("SELECT name FROM sqlite_master WHERE type='table';").fetchall()
+for i in range(0,len(listOfTables)):
+    cursor.execute(f"DROP TABLE {listOfTables[i][0]}")
+print(listOfTables)
+connection.close()
