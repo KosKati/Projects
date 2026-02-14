@@ -79,6 +79,13 @@ def set_sub1(value):
     with open("./Data/Line_up_data.json", "w") as f:
         json.dump(data,f)
 
+def set_setter(value):
+    with open("./Data/Line_up_data.json", "r+") as f:
+        data = json.load(f)
+        data["setter"] = value
+    with open("./Data/Line_up_data.json", "w") as f:
+        json.dump(data,f)
+
 def set_sub2(value):
     with open("./Data/Line_up_data.json", "r+") as f:
         data = json.load(f)

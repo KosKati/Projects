@@ -1,3 +1,5 @@
+import sqlite3
+
 from PyQt6.QtWidgets import QWidget, QVBoxLayout, QLabel, QLineEdit, QHBoxLayout, QPushButton, QComboBox
 import JsonFunctions
 from icecream import ic
@@ -23,7 +25,7 @@ class VideoFilter(QWidget):
         self.player_number_cb = QComboBox()
         self.action_label = QLabel("Aktion : ")
         self.action_cb = QComboBox()
-        self.action_cb.addItems(["Aufschlag", "Annahme", "Abwehr", "Zuspiel", "Angriff", "Block"])
+        self.action_cb.addItems(["Keine","Service", "Reception", "Defense", "Setting", "Attack", "Block"])
         self.rating_label = QLabel("Rating : ")
         self.rating_cb = QComboBox()
         self.rating_cb.addItems(["Alle","++", "+", "0", "-", "--"])
@@ -35,6 +37,7 @@ class VideoFilter(QWidget):
         names = DBFunctions.get_all_table_names("VolleyScout2.db")
         for name in names:
             self.games_box.addItem(name[0])
+        self.create_videos_button = QPushButton("Erstelle Videos")
 
         self.layout_header = QHBoxLayout()
         self.layout_header.addWidget(self.label_games)
@@ -62,11 +65,74 @@ class VideoFilter(QWidget):
         self.layout.addLayout(self.layout_rating)
         self.layout.addLayout(self.layout_situation)
         self.layout.addLayout(self.layout_detail)
+        self.layout.addWidget(self.create_videos_button)
         self.setLayout(self.layout)
 
         self.confirm_game_button.clicked.connect(self.insert_player_numbers)
+        self.create_videos_button.clicked.connect(self.create_videos)
+
+    def create_videos(self):
+        first = "yes"
+        f = open("./Data/Database_name.txt")
+        database_name = f.read()
+        result = "SELECT TIMESTAMP FROM "+ database_name +" "
+
+        text = str(self.player_number_cb.currentText())
+        if not text == "Keine":
+            number = self.player_number_cb.currentText()
+            add_number = "WHERE NUMBER = " + number + " "
+            result += add_number
+            first = "no"
+
+        text = str(self.action_cb.currentText())
+        if not text == "Keine":
+            action = self.action_cb.currentText()
+            if first == "yes":
+               add_action = "WHERE ACTION = '" + action + "' "
+               result += add_action
+               first = "no"
+            else:
+                add_action = "AND ACTION = '" + action + "' "
+                result += add_action
+                first = "no"
+
+        text = str(self.rating_cb.currentText())
+        if not text == "Alle":
+            rating = self.rating_cb.currentText()
+            if first == "yes":
+               add_action = "WHERE RATING = '" + rating + "' "
+               result += add_action
+               first = "no"
+            else:
+                add_action = "AND RATING = '" + rating + "' "
+                result += add_action
+                first = "no"
+
+        text = str(self.situation_cb.currentText())
+        if not text == "Alle":
+            curr_situation = self.situation_cb.currentText()
+            if first == "yes":
+               add_action = "WHERE RATING = '" + curr_situation + "' "
+               result += add_action
+               first = "no"
+            else:
+                add_action = "AND RATING = '" + curr_situation + "' "
+                result += add_action
+                first = "no"
+
+        ic(result)
+        connection = sqlite3.connect("VolleyScout2.db")
+        cursor = connection.cursor()
+        cursor.execute(result)
+        rows = cursor.fetchall()
+        connection.close()
+        ic()
+        print(rows)
+
+
 
     def insert_player_numbers(self):
+
         self.player_number_cb.clear()
         numbers = DBFunctions.get_all_numbers("VolleyScout2.db",self.games_box.currentText())
         for number in numbers:
@@ -75,6 +141,9 @@ class VideoFilter(QWidget):
                break
             else:
                 self.player_number_cb.addItem(number[0])
+
+        self.player_number_cb.insertItem(0, "Keine")
+        self.player_number_cb.setCurrentIndex(0)
 
 
 

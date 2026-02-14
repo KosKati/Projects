@@ -31,7 +31,6 @@ actual_game_box = actual_game.box_teams
 left_side = court.left_side
 team_labels = court.team_window
 
-
 videoplayer = Window(statistic_frame)
 
 left_side_layout = QGridLayout()

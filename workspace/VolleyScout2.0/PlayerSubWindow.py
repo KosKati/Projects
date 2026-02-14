@@ -16,16 +16,22 @@ class PlayerSubWindow(QWidget):
         self.layout = QVBoxLayout()
         self.label_player_in = QLabel("Spieler rein:")
         self.label_player_out = QLabel("Spieler raus:")
+        self.new_setter_label = QLabel("Neuer Zuspieler:")
         self.edit_player_in = QLineEdit()
         self.edit_player_out = QLineEdit()
+        self.edit_new_setter = QLineEdit()
         self.layout_player_in = QHBoxLayout()
         self.layout_player_out = QHBoxLayout()
+        self.layout_setter_change = QHBoxLayout()
+        self.layout_setter_change.addWidget(self.new_setter_label)
+        self.layout_setter_change.addWidget(self.edit_new_setter)
         self.layout_player_in.addWidget(self.label_player_in)
         self.layout_player_in.addWidget(self.edit_player_in)
         self.layout_player_out.addWidget(self.label_player_out)
         self.layout_player_out.addWidget(self.edit_player_out)
         self.layout.addLayout(self.layout_player_in)
         self.layout.addLayout(self.layout_player_out)
+        self.layout.addLayout(self.layout_setter_change)
         self.button_confirm = QPushButton("OK")
         self.button_cancel = QPushButton("Abbrechen")
         self.layout_button = QHBoxLayout()
@@ -62,6 +68,9 @@ class PlayerSubWindow(QWidget):
             if self.court_labels[i].text() == player_out:
                 self.court_labels[i].setText(player_in)
                 break
+
+        if self.edit_new_setter.text():
+            JsonFunctions.set_setter(self.edit_new_setter.text())
         ic()
 
     def cancel_clicked(self):

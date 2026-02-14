@@ -3,10 +3,13 @@ import re
 
 from PyQt6.QtWidgets import QApplication, QWidget, QPushButton, \
     QHBoxLayout, QVBoxLayout, QStyle, QSlider, QFileDialog, QGroupBox, QFrame, QLineEdit, QLabel, QMessageBox
-from PyQt6.QtGui import QIcon
+from PyQt6.QtGui import QIcon, QKeyEvent
 from PyQt6.QtMultimedia import QMediaPlayer, QAudioOutput
-from PyQt6.QtCore import Qt, QUrl
+from PyQt6.QtCore import Qt, QUrl, QEvent, QObject
+from PyQt6 import QtCore, QtWidgets, QtGui
 from PyQt6.QtMultimediaWidgets import QVideoWidget
+from icecream import ic
+
 from Updates import Update
 import os.path
 from pathlib import Path
@@ -14,7 +17,177 @@ from UpdatePlayers import PlayersUpdate
 from moviepy import VideoFileClip, TextClip, CompositeVideoClip
 from moviepy import *
  
- 
+
+
+
+class ModifiedLineEdit(QtWidgets.QLineEdit):
+    def __init__(self, parent, media_player):
+        super().__init__(parent)
+        self.media_player = media_player
+    def keyPressEvent(self, event: QtGui.QKeyEvent) -> None:
+        super(QLineEdit, self).keyPressEvent(event)
+        if event.key() == Qt.Key.Key_O:
+            print("Tab Key pressed")
+
+        if event.key() == Qt.Key.Key_I:
+            print("Space Key pressed")
+
+        if event.key() == Qt.Key.Key_P:
+            print("Return Key pressed")
+
+
+    """ 
+
+class ModifiedLineEdit(QLineEdit):
+    def __init__(self,parent, media_player):
+        QLineEdit.__init__(self, parent)
+        self.mediaplayer = media_player
+        self.textChanged.connect(self.keyPressEvent)
+
+
+    def keyPressEvent(self, e):
+        if e[-1] == Qt.Key.Key_O:
+            print("1")
+            self.go_five_forward()
+
+        if e.key() == Qt.Key.Key_I:
+            print("2")
+            self.go_five_backward()
+
+        if e.key() == Qt.Key.Key_P:
+            print("3")
+            self.play_or_pause()
+
+       def keyPressEvent(self, event):
+        super(QLineEdit, self).keyPressEvent(event)
+        if event.key() == QtCore.Qt.Key_Tab:
+            print("Tab Key pressed")
+
+        if event.key() == QtCore.Qt.Key_Space:
+            print("Space Key pressed")
+
+        if event.key() == QtCore.Qt.Key_Return:
+            print("Return Key pressed")
+    
+    
+    
+    def keyPressEvent(self, e):
+        if e.key() == Qt.Key.Key_O:
+            print("1")
+            self.go_five_forward()
+
+        if e.key() == Qt.Key.Key_I:
+            print("2")
+            self.go_five_backward()
+
+        if e.key() == Qt.Key.Key_P:
+            print("3")
+            self.play_or_pause()
+
+
+    def play_or_pause(self):
+        if self.mediaplayer.mediaStatus == QMediaPlayer.PlaybackState.PlayingState:
+            self.mediaplayer.pause()
+
+        if self.mediaplayer.mediaStatus == QMediaPlayer.PlaybackState.PausedState:
+            self.mediaplayer.play()
+
+
+
+    def go_five_forward(self):
+        self.mediaplayer.setPosition(self.mediaplayer.position() + 9000)
+
+    def go_five_backward(self):
+        self.mediaplayer.setPosition(self.mediaplayer.position() - 9000)
+    """
+class CustomLineEdit(QLineEdit):
+    def __init__(self, media_player):
+        super().__init__()
+
+        self.media_player = media_player
+    def keyPressEvent(self, event):
+
+        # Beispiel: Prüfen, ob die Eingabetaste (Enter) gedrückt wurde
+        if event.key() == Qt.Key.Key_O:
+            self.go_five_forward()
+
+        if event.key() == Qt.Key.Key_P:
+            ic()
+            self.play_or_pause()
+
+        if event.key() == Qt.Key.Key_I:
+            self.go_five_backward()
+
+
+        # WICHTIG: Basis-Implementierung aufrufen, damit man weiterhin tippen kann
+        super().keyPressEvent(event)
+
+    def go_five_forward(self):
+        self.media_player.setPosition(self.media_player.position() + 9000)
+
+    def go_five_backward(self):
+        self.media_player.setPosition(self.media_player.position() - 9000)
+
+    def play_or_pause(self):
+        ic()
+        if self.media_player.playbackState() == QMediaPlayer.PlaybackState.PlayingState:
+            ic()
+            self.media_player.pause()
+        else:
+            self.media_player.play()
+
+
+
+class VideoWindow(QWidget):
+    def __init__(self, video_widget,label_console, console_line, player_groupbox, media_player):
+        super().__init__()
+        self.mediaplayer = media_player
+        self.resize(800, 600)
+        self.layout = QVBoxLayout(self)
+        self.layout.addWidget(video_widget, stretch=3)
+        self.layout_console = QHBoxLayout()
+        self.console_widget = console_line
+        self.console_widget.textChanged.connect(self.check_last_char)
+        self.layout_console.addWidget(label_console)
+        self.layout_console.addWidget(self.console_widget)
+        self.layout_console.addLayout(player_groupbox)
+        self.layout.addLayout(self.layout_console)
+        self.setLayout(self.layout)
+
+        self.video_widget = video_widget
+        self.label_console = label_console
+
+        #self.filter = EventFilter()
+       # self.console_widget.installEventFilter(self.filter)
+
+    def check_last_char(self):
+        if self.console_widget.text():
+            string = self.console_widget.text()
+            if string[-1] in ["i", "o", "p"]:
+                string = string[:-1]
+                self.console_widget.setText(string)
+
+
+
+
+
+
+
+    def go_five_forward(self):
+        self.mediaplayer.setPosition(self.mediaplayer.position() + 9000)
+
+
+
+
+class ConsoleWindow(QWidget):
+    def __init__(self, label_console, console_widget):
+        super().__init__()
+        self.resize(400, 100)
+        self.layout = QHBoxLayout()
+        self.layout.addWidget(label_console)
+        self.layout.addWidget(console_widget)
+        self.setLayout(self.layout)
+
  
 class Window(QWidget):
     def __init__(self, statistic_frame):
@@ -33,11 +206,12 @@ class Window(QWidget):
  
  
         self.mediaplayer = QMediaPlayer()
+
         self.audio = QAudioOutput()
  
         self.videowidget = QVideoWidget()
- 
- 
+
+
         #btn for opening
         self.openBtn = QPushButton("Open Video")
         self.openBtn.clicked.connect(self.open_video)
@@ -85,14 +259,16 @@ class Window(QWidget):
         self.vbox = QHBoxLayout()
  
         self.vbox.addWidget(self.videowidget)
-        self.vbox.addLayout(self.hbox)
+        #self.vbox.addLayout(self.hbox)
  
         self.linebox = QHBoxLayout()
-        self.comline = QLineEdit()
+        #self.comline = QLineEdit()
+
+
 
         self.labelcom = QLabel("Eingaben: ")
         self.linebox.addWidget(self.labelcom)
-        self.linebox.addWidget(self.comline)
+        #self.linebox.addWidget(self.comline)
 
 
 
@@ -102,12 +278,20 @@ class Window(QWidget):
         self.person_groupbox.setLayout(self.vbox)
 
         self.input_groupbox = QGroupBox()
-        self.input_groupbox.setLayout(self.linebox)
+        #self.input_groupbox.setLayout(self.linebox)
 
+        #self.console_window = ConsoleWindow(self.labelcom, self.comline)
+        #self.console_window.show()
  
         self.mediaplayer.setVideoOutput(self.videowidget)
-        self.mediaplayer.setAudioOutput(self.audio)
- 
+        #self.mediaplayer.setAudioOutput(self.audio)
+
+        self.videowidget2 = QVideoWidget()
+        self.mediaplayer.setVideoOutput(self.videowidget2)
+        self.comline = CustomLineEdit(self.mediaplayer)
+        #self.comline = ModifiedLineEdit(self, self.mediaplayer)
+        self.second_window = VideoWindow(self.videowidget2,self.labelcom, self.comline,self.hbox, self.mediaplayer)
+        self.second_window.show()
  
         #media player signals
         self.plus_five.clicked.connect(self.go_five_forward)
@@ -120,6 +304,7 @@ class Window(QWidget):
         #lineedit signals
         self.comline.returnPressed.connect(partial(self.execute_input,self.statistic_frame))
 
+        ic()
     def hhmmss(self,ms):
         # s = 1000
         # m = 60000
@@ -203,7 +388,6 @@ class Window(QWidget):
                 for command in commands:
                     players_update = PlayersUpdate(command,statistic_frame,str(int(self.mediaplayer.position()/1000)), database_name)
                     players_update.start()
-
         self.comline.clear()
 
     def set_set(self, current_set : str):

@@ -66,11 +66,11 @@ class PlayersUpdate:
                 self.set_new_rotation_points_value()
             self.update_db_points_reception_defense()
             self.update_labels_points_reception_defense()
-            ic()
             self.update_db_so_or_db_value()
             self.update_db_or_so_labels()
-            ic()
+        ic()
         self.insert_action_db()
+        ic()
         if self.action in ["S", "A", "B"] and self.rating == "++":
             self.update_db_set_stats_points()
             self.update_set_stat(self.action)
@@ -95,9 +95,6 @@ class PlayersUpdate:
             labels_so_or_bp = self.players_label.rece_window[1]
         if so_or_bp_value == "bp":
             labels_so_or_bp = self.players_label.serv_window[1]
-        ic()
-        ic(labels_so_or_bp)
-        ic()
         db_value_so_or_bp = db_value_so_or_bp.split("/")
         labels_so_or_bp[0].setText(db_value_so_or_bp[1])
         if int(db_value_so_or_bp[0]) > 0 :
@@ -113,10 +110,8 @@ class PlayersUpdate:
         if so_or_bp_value == "so":
             string_label_3_1 = "Ann"
             string_label_3_2 = "P"
-        ic()
         string_label_3 = f"Pro {label3_value} {string_label_3_1} \n 1 {string_label_3_2}"
         labels_so_or_bp[2].setText(string_label_3)
-        ic()
 
     def update_db_so_or_db_value(self):
         so_or_bp_value = JsonFunctions.get_so_or_bp()

@@ -1,9 +1,13 @@
 import sqlite3
 import sys
+
+from PyQt6.QtCore import Qt
+from icecream import ic
+
 import JsonFunctions
 
 import DBFunctions
-from PyQt6.QtWidgets import QApplication, QMainWindow, QMessageBox, QPushButton, QWidget
+from PyQt6.QtWidgets import QApplication, QMainWindow, QMessageBox, QPushButton, QWidget, QLineEdit, QLabel, QHBoxLayout
 from UpdatePlayers import PlayersUpdate
 import MainWindow
 #DBFunctions.create_table("Testgame2")
@@ -117,10 +121,11 @@ print(line_up)
 """
 connection = sqlite3.connect("VolleyScout2.db")
 cursor = connection.cursor()
-#listOfTables = []
-
-listOfTables = cursor.execute("SELECT name FROM sqlite_master WHERE type='table';").fetchall()
-for i in range(0,len(listOfTables)):
-    cursor.execute(f"DROP TABLE {listOfTables[i][0]}")
-print(listOfTables)
+cursor.execute("SELECT TIMESTAMP FROM game_data_EW1_BS_01 WHERE NUMBER = 9 AND ACTION = 'Setting'")
+rows = cursor.fetchall()
 connection.close()
+ic()
+print(rows)
+
+
+
