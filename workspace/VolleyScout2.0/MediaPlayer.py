@@ -190,11 +190,11 @@ class ConsoleWindow(QWidget):
 
  
 class Window(QWidget):
-    def __init__(self, statistic_frame):
+    def __init__(self, statistic_frame, court):
         super().__init__()
 
         self.statistic_frame = statistic_frame
- 
+        self.court = court
         #self.setGeometry(200,200, 700, 400)
         self.setWindowTitle("PyQt Media Player")
         self.setWindowIcon(QIcon('player.ico'))
@@ -379,14 +379,16 @@ class Window(QWidget):
         sets = ["Satz 1", "Satz 2", "Satz 3", "Satz 4", "Satz 5"]
         if self.comline.text() in sets:
             self.set_set(self.comline.text())
+        elif self.comline.text() =="r":
+            self.court.rotieren()
         else:
             formated_command = self.comline.text().replace(" ", "")
             commands = formated_command.split(",")
 
             if self.bool_match(commands):
 
-                for command in commands:
-                    players_update = PlayersUpdate(command,statistic_frame,str(int(self.mediaplayer.position()/1000)), database_name)
+                for i in range(0,len(commands)):
+                    players_update = PlayersUpdate(commands[i],statistic_frame,str(int(self.mediaplayer.position()/1000)+i), database_name)
                     players_update.start()
         self.comline.clear()
 
@@ -398,8 +400,17 @@ class Window(QWidget):
         for t in commands:
             if re.fullmatch(r"(\d\d?[SRBDAZ]([+0-]|(--)|(\+\+))((\(.*)?(:)?(.*\)))?)|\d\d?AB((\(.*)?(:)?(.*\)))?", t) is None:
                 print("Fehler bei:" + t)
+                self.show_warning(t)
                 return False
                 break
+
+    def show_warning(self, input_le):
+        QMessageBox.warning(
+            self,
+            "Fehler",  # Title of the window
+            f"Fehler bei {input_le}",  # Content text
+            QMessageBox.StandardButton.Ok  # Buttons to show
+        )
 
         return True
 

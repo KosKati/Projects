@@ -314,9 +314,10 @@ class PlayersUpdate:
 
     def insert_action_db(self):
         dict_values = {"S": "Service", "R": "Reception", "A": "Attack", "B": "Block", "Z":"Setting", "D":"Defense"}
+        rating_values = {"++" : "plusplus", "+" : "plus", "0": "zero", "-" : "minus", "--" : "minusminus"}
         ic()
         ic([self.player_number, dict_values[self.action], self.rating])
-        DBFunctions.insert_action_in_table(self.table_name, self.player_number, dict_values[self.action], self.rating, self.time_stamp)
+        DBFunctions.insert_action_in_table(self.table_name, self.player_number, dict_values[self.action], rating_values[self.rating], self.time_stamp)
         ic()
     def update_db_stats_attack(self):
         #Format Ges/Fhl/Blo/Pkt/Pkt%

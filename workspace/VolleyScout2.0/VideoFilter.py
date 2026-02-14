@@ -98,13 +98,14 @@ class VideoFilter(QWidget):
 
         text = str(self.rating_cb.currentText())
         if not text == "Alle":
+            rating_values = {"++": "plusplus", "+": "plus", "0": "zero", "-": "minus", "--": "minusminus"}
             rating = self.rating_cb.currentText()
             if first == "yes":
-               add_action = "WHERE RATING = '" + rating + "' "
+               add_action = "WHERE RATING = '" + rating_values[rating] + "' "
                result += add_action
                first = "no"
             else:
-                add_action = "AND RATING = '" + rating + "' "
+                add_action = "AND RATING = '" + rating_values[rating] + "' "
                 result += add_action
                 first = "no"
 

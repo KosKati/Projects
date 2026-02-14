@@ -26,7 +26,7 @@ class SetLineUp(QWidget):
         for i in range(1,3):
             self.tmp_layout = QHBoxLayout()
             self.tmp_line_edit = QLineEdit()
-            self.tmp_line_edit.setText(str(i + 10))
+            self.tmp_line_edit.setText(str(i))
             self.all_line_edits.append(self.tmp_line_edit)
             self.tmp_layout.addWidget(QLabel("Libero: " + str(i) ))
             self.tmp_layout.addWidget(self.tmp_line_edit)

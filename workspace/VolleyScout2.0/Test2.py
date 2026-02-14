@@ -119,13 +119,14 @@ print(line_up)
 line_up.append(tmp)
 print(line_up)
 """
+
 connection = sqlite3.connect("VolleyScout2.db")
 cursor = connection.cursor()
-cursor.execute("SELECT TIMESTAMP FROM game_data_EW1_BS_01 WHERE NUMBER = 9 AND ACTION = 'Setting'")
-rows = cursor.fetchall()
-connection.close()
-ic()
-print(rows)
+#listOfTables = []
 
+listOfTables = cursor.execute("SELECT name FROM sqlite_master WHERE type='table';").fetchall()
+for i in range(0,len(listOfTables)):
+    cursor.execute(f"DROP TABLE {listOfTables[i][0]}")
+connection.close()
 
 
