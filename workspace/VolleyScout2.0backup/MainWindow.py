@@ -31,7 +31,7 @@ actual_game_box = actual_game.box_teams
 left_side = court.left_side
 team_labels = court.team_window
 
-videoplayer = Window(statistic_frame, court)
+videoplayer = Window(statistic_frame)
 
 left_side_layout = QGridLayout()
 label_court_img = QLabel()
@@ -61,11 +61,11 @@ parentLayout.addWidget(actual_game_box, 0, 0, 2,2)
 parentLayout.addWidget(label_court_img, 3, 0, 2,2)
 parentLayout.addWidget(left_side,2,0,3,2)
 parentLayout.addWidget(team_labels,7,0,3,2)
-parentLayout.addWidget(game_btn, 10, 0, 1,2)
+parentLayout.addWidget(game_btn, 10, 0, 1,3)
 
-#parentLayout.addWidget(video, 0,2, 10,10)
-#parentLayout.addWidget(input, 10, 3, 1,8)
-#parentLayout.addWidget(open_btn, 11,3, 1,8)
+parentLayout.addWidget(video, 0,2, 10,10)
+parentLayout.addWidget(input, 10, 3, 1,8)
+parentLayout.addWidget(open_btn, 11,3, 1,8)
 parentLayout.addWidget(label2, 0, 13, 12,8)
 parentLayout.addWidget(statistic_frame_players, 0, 13, 6,8)
 parentLayout.addWidget(statistic_frame_game, 6, 13, 6,8)

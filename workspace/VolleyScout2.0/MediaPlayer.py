@@ -9,6 +9,10 @@ from PyQt6.QtCore import Qt, QUrl, QEvent, QObject
 from PyQt6 import QtCore, QtWidgets, QtGui
 from PyQt6.QtMultimediaWidgets import QVideoWidget
 from icecream import ic
+import vlc
+import vlc_player
+
+
 
 from Updates import Update
 import os.path
@@ -16,90 +20,9 @@ from pathlib import Path
 from UpdatePlayers import PlayersUpdate
 from moviepy import VideoFileClip, TextClip, CompositeVideoClip
 from moviepy import *
+import DBFunctions
  
 
-
-
-class ModifiedLineEdit(QtWidgets.QLineEdit):
-    def __init__(self, parent, media_player):
-        super().__init__(parent)
-        self.media_player = media_player
-    def keyPressEvent(self, event: QtGui.QKeyEvent) -> None:
-        super(QLineEdit, self).keyPressEvent(event)
-        if event.key() == Qt.Key.Key_O:
-            print("Tab Key pressed")
-
-        if event.key() == Qt.Key.Key_I:
-            print("Space Key pressed")
-
-        if event.key() == Qt.Key.Key_P:
-            print("Return Key pressed")
-
-
-    """ 
-
-class ModifiedLineEdit(QLineEdit):
-    def __init__(self,parent, media_player):
-        QLineEdit.__init__(self, parent)
-        self.mediaplayer = media_player
-        self.textChanged.connect(self.keyPressEvent)
-
-
-    def keyPressEvent(self, e):
-        if e[-1] == Qt.Key.Key_O:
-            print("1")
-            self.go_five_forward()
-
-        if e.key() == Qt.Key.Key_I:
-            print("2")
-            self.go_five_backward()
-
-        if e.key() == Qt.Key.Key_P:
-            print("3")
-            self.play_or_pause()
-
-       def keyPressEvent(self, event):
-        super(QLineEdit, self).keyPressEvent(event)
-        if event.key() == QtCore.Qt.Key_Tab:
-            print("Tab Key pressed")
-
-        if event.key() == QtCore.Qt.Key_Space:
-            print("Space Key pressed")
-
-        if event.key() == QtCore.Qt.Key_Return:
-            print("Return Key pressed")
-    
-    
-    
-    def keyPressEvent(self, e):
-        if e.key() == Qt.Key.Key_O:
-            print("1")
-            self.go_five_forward()
-
-        if e.key() == Qt.Key.Key_I:
-            print("2")
-            self.go_five_backward()
-
-        if e.key() == Qt.Key.Key_P:
-            print("3")
-            self.play_or_pause()
-
-
-    def play_or_pause(self):
-        if self.mediaplayer.mediaStatus == QMediaPlayer.PlaybackState.PlayingState:
-            self.mediaplayer.pause()
-
-        if self.mediaplayer.mediaStatus == QMediaPlayer.PlaybackState.PausedState:
-            self.mediaplayer.play()
-
-
-
-    def go_five_forward(self):
-        self.mediaplayer.setPosition(self.mediaplayer.position() + 9000)
-
-    def go_five_backward(self):
-        self.mediaplayer.setPosition(self.mediaplayer.position() - 9000)
-    """
 class CustomLineEdit(QLineEdit):
     def __init__(self, media_player):
         super().__init__()
@@ -205,7 +128,8 @@ class Window(QWidget):
 
  
  
-        self.mediaplayer = QMediaPlayer()
+        #self.mediaplayer = QMediaPlayer()
+        self.mediaplayer = vlc.MediaPlayer()
 
         self.audio = QAudioOutput()
  
@@ -283,14 +207,15 @@ class Window(QWidget):
         #self.console_window = ConsoleWindow(self.labelcom, self.comline)
         #self.console_window.show()
  
-        self.mediaplayer.setVideoOutput(self.videowidget)
+        #self.mediaplayer.setVideoOutput(self.videowidget)
         #self.mediaplayer.setAudioOutput(self.audio)
 
         self.videowidget2 = QVideoWidget()
         self.mediaplayer.setVideoOutput(self.videowidget2)
         self.comline = CustomLineEdit(self.mediaplayer)
         #self.comline = ModifiedLineEdit(self, self.mediaplayer)
-        self.second_window = VideoWindow(self.videowidget2,self.labelcom, self.comline,self.hbox, self.mediaplayer)
+        self.second_window = vlc_player.MediaPlayer()
+        #self.second_window = VideoWindow(self.videowidget2,self.labelcom, self.comline,self.hbox, self.mediaplayer)
         self.second_window.show()
  
         #media player signals
@@ -334,7 +259,9 @@ class Window(QWidget):
         if filename != '':
             self.file_name = filename
 
-            self.mediaplayer.setSource(QUrl.fromLocalFile(filename))
+            self.mediaplayer.set_media(QUrl.fromLocalFile(filename))
+            #self.mediaplayer.setSource(QUrl.fromLocalFile(filename))
+            self.mediaplayer.play()
             self.playBtn.setEnabled(True)
  
     def play_video(self):
@@ -381,28 +308,40 @@ class Window(QWidget):
             self.set_set(self.comline.text())
         elif self.comline.text() =="r":
             self.court.rotieren()
+
+        elif self.comline.text() =="ggfhl":
+
+            DBFunctions.update_stats_points_values("VolleyScout2.db", database_name , "GgFhl")
+            self.update_set_stat("GgFhl", database_name,statistic_frame)
+
         else:
+
             formated_command = self.comline.text().replace(" ", "")
             commands = formated_command.split(",")
-
+            ic(commands)
+            ic(self.bool_match(commands))
             if self.bool_match(commands):
-
+                ic()
                 for i in range(0,len(commands)):
+                    ic()
                     players_update = PlayersUpdate(commands[i],statistic_frame,str(int(self.mediaplayer.position()/1000)+i), database_name)
+                    ic()
                     players_update.start()
-        self.comline.clear()
+                    ic()
+            self.comline.clear()
+
+    def update_set_stat(self, action, database_name,statistic_frame):
+        values = DBFunctions.get_stats_points_values("VolleyScout2.db", database_name).split("/")
+        values_index = {"S" : 0, "A" : 1, "B" : 2, "GgFhl" : 3 }
+        set_index = {"Satz 1" : 0, "Satz 2" : 1, "Satz 3" : 2, "Satz 4" : 3, "Satz 5" : 4}
+        f = open("./Data/Current_Set.txt")
+        statistic_frame.player_frame.all_labels_set[set_index[f.read()]].result_labels_points[values_index[action]].setText(values[values_index[action]])
 
     def set_set(self, current_set : str):
         with open("./Data/Current_Set.txt", "w") as f:  # in write mode
             f.write(current_set )
 
-    def bool_match(self, commands):
-        for t in commands:
-            if re.fullmatch(r"(\d\d?[SRBDAZ]([+0-]|(--)|(\+\+))((\(.*)?(:)?(.*\)))?)|\d\d?AB((\(.*)?(:)?(.*\)))?", t) is None:
-                print("Fehler bei:" + t)
-                self.show_warning(t)
-                return False
-                break
+
 
     def show_warning(self, input_le):
         QMessageBox.warning(
@@ -412,6 +351,14 @@ class Window(QWidget):
             QMessageBox.StandardButton.Ok  # Buttons to show
         )
 
+    def bool_match(self, commands):
+        for t in commands:
+            if re.fullmatch(r"(\d\d?[SRBDAZ]([+0-]|(--)|(\+\+))((\(.*)?(:)?(.*\)))?)|\d\d?AB((\(.*)?(:)?(.*\)))?",
+                            t) is None:
+                print("Fehler bei:" + t)
+                self.show_warning(t)
+                return False
+                break
         return True
 
 

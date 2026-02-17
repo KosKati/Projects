@@ -50,7 +50,6 @@ class PlayersUpdate:
             self.update_label_reception()
             self.set_situation_to_json()
             self.set_so_or_db_value()
-
         if self.action == "D":
             self.set_rotation_to_defense()
             self.set_situation_to_json()
@@ -68,9 +67,7 @@ class PlayersUpdate:
             self.update_labels_points_reception_defense()
             self.update_db_so_or_db_value()
             self.update_db_or_so_labels()
-        ic()
         self.insert_action_db()
-        ic()
         if self.action in ["S", "A", "B"] and self.rating == "++":
             self.update_db_set_stats_points()
             self.update_set_stat(self.action)
@@ -323,18 +320,23 @@ class PlayersUpdate:
         #Format Ges/Fhl/Blo/Pkt/Pkt%
 
         result_values = DBFunctions.select_stat(self.table_name, self.player_number, "Attack_Data").split("/")
+        ic("attack")
+        ic(result_values)
         tmp_value = str(int(result_values[0]) + 1)
         result_values[0] = tmp_value
         if self.rating == "--":
             tmp_value = str(int(result_values[1]) + 1)
             result_values[1] = tmp_value
-        if self.rating == "B":
+        if self.rating == "-":
             tmp_value = str(int(result_values[2]) + 1)
             result_values[2] = tmp_value
         if self.rating == "++":
             tmp_value = str(int(result_values[3]) + 1)
             result_values[3] = tmp_value
-
+            ic()
+        result_values[4] = str(int((int(result_values[3]) / int(result_values[0]) * 100)))
+        ic()
+        ic(result_values)
         result_values = "/".join(result_values)
         DBFunctions.update_stat(self.table_name, self.player_number, "Attack_Data", str(result_values))
         self.update_db_points()
@@ -347,7 +349,7 @@ class PlayersUpdate:
                 player.result_labels_attack[1].setText(value_total[1])
                 player.result_labels_attack[2].setText(value_total[2])
                 player.result_labels_attack[3].setText(value_total[3])
-                player.result_labels_attack[4].setText(str(int((int(value_total[3]) / int(value_total[0]) * 100))))
+                player.result_labels_attack[4].setText(value_total[4])
                 break
 
     def update_set_stat(self, action):
@@ -369,33 +371,43 @@ class PlayersUpdate:
 
     def update_label_reception(self):
         value_total = DBFunctions.select_stat(self.table_name, self.player_number, "Reception_Data").split("/")
+        ic("labels")
+        ic(value_total)
         for player in self.players_label.player_frame.stat_list:
             if player.result_labels_number[0].text() == self.player_number:
                 player.result_labels_reception[0].setText(value_total[0])
                 player.result_labels_reception[1].setText(value_total[1])
-                player.result_labels_reception[2].setText(str(int((int(value_total[2]) / int(value_total[0])*100))))
-                player.result_labels_reception[3].setText(str(int((int(value_total[3]) / int(value_total[0])*100))))
+                player.result_labels_reception[2].setText(value_total[4])
+                player.result_labels_reception[3].setText(value_total[5])
                 break
 
     def update_db_stats_reception(self):
         #Liste reception = [Ges/Fehler/Pos/Perf]
         result_values = DBFunctions.select_stat(self.table_name, self.player_number, "Reception_Data").split("/")
+        ic("go")
+        ic(result_values)
         tmp_value = str(int(result_values[0]) + 1)
         result_values[0] = tmp_value
+
+        ic(result_values[0])
         if self.rating == "+":
-            tmp_value = str(int(result_values[2]) + 1)
-            result_values[2] = tmp_value
+            result_values[2] = str(int(result_values[2]) + 1)
+
         if self.rating == "++":
-            tmp_value = str(int(result_values[2]) + 1)
-            result_values[2] = tmp_value
-            tmp_value = str(int(result_values[3]) + 1)
-            result_values[3] = tmp_value
+            result_values[2] = str(int(result_values[2]) + 1)
+            result_values[3] = str(int(result_values[3]) + 1)
         if self.rating == "--":
             tmp_value = str(int(result_values[1]) + 1)
             result_values[1] = tmp_value
+        tmp_value_pos = str(int(int(result_values[2]) / int(result_values[0]) * 100))
+        result_values[4] = tmp_value_pos
+        tmp_value_per = str(int(int(result_values[3]) / int(result_values[0]) * 100))
+        result_values[5] = tmp_value_per
 
         result_values = "/".join(result_values)
+        ic(result_values)
         DBFunctions.update_stat(self.table_name, self.player_number, "Reception_Data", str(result_values))
+        ic("ende")
 
     def update_db_stats_service(self):
         #result =  list(DBFunctions.select_stat(self.table_name, self.player_number, "Service_Data"))

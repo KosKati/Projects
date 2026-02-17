@@ -1,4 +1,6 @@
 from PyQt6.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout, QHBoxLayout,QGroupBox
+from icecream import ic
+
 from NewGameWindow import NewGameWindow
 from NewTeamWindow import NewTeamWindow
 from SetLineUpWindow import SetLineUp
@@ -9,6 +11,7 @@ class GameButtons(QWidget) :
     #Änerung 2 def __init__(self, player_labels, court_players, players_frame, current_set_layout, old_body):
     def __init__(self, court, statistic_frame) :
         super().__init__()
+        self.line_up = None
         self.old_body = statistic_frame.body
         self.current_set_layout = statistic_frame.current_set_layout
         self.players_frame = statistic_frame.player_frame
@@ -57,9 +60,11 @@ class GameButtons(QWidget) :
         self.vf.show()
 
     def set_line_up(self):
+        ic()
         self.line_up = SetLineUp(self.court_players)
+        ic()
         self.line_up.show()
-
+        ic()
     def load_game(self):
         pass
 

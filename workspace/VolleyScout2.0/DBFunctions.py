@@ -32,6 +32,30 @@ def select_stat(cursor, table_name, number:str, stat_value:str):
     return row[0]
 
 @connect_db
+def select_report_player_data(cursor, table_name ):
+    cmd = f"SELECT Number,NAME, Points_Data, Service_Data, Reception_Data,Attack_Data, Block_Data FROM {table_name} WHERE Name IS NOT NULL"
+    cursor.execute(cmd)
+    result = []
+    row = cursor.fetchall()
+    return row
+
+@connect_db
+def select_report_set_points_data(cursor, table_name ):
+    result =[]
+    set_count = ["1","2","3","4","5"]
+    for count in set_count:
+        cmd = f"SELECT Current_Set,Set{count}_points, Set{count}_service, Set{count}_reception, Set{count}_attack,Set1_block FROM {table_name} WHERE Set{count}_points IS NOT NULL"
+        cursor.execute(cmd)
+        row = cursor.fetchall()
+        row = list(row[0])
+        result.append(row)
+
+
+    return result
+
+
+
+@connect_db
 def set_new_id(cursor, table_name):
     cmd = "SELECT MAX(ID) FROM " + table_name
     cursor.execute(cmd)
@@ -141,7 +165,7 @@ def create_table(table_name):
 @connect_db
 def insert_start_values(cursor, table_name, number):
 
-    cmd = f"UPDATE {table_name} SET Points_Data = '0/0/0', Service_Data = '0/0/0', Reception_Data = '0/0/0/0', Attack_Data = '0/0/0/0/0', Block_Data = '0' WHERE Number = {number}"
+    cmd = f"UPDATE {table_name} SET Points_Data = '0/0/0', Service_Data = '0/0/0', Reception_Data = '0/0/0/0/0/0', Attack_Data = '0/0/0/0/0', Block_Data = '0' WHERE Number = {number}"
     cursor.execute(cmd)
 
 def get_stats_points_values(db_name, table_name):
@@ -310,6 +334,46 @@ def update_game_stat_value(cursor, table_name, stat:str  , new_value:str):
 def update_rotation_difference_value(cursor, table_name, rotation:str  , new_value:str):
     cmd = f"UPDATE {table_name} SET {rotation} = '{new_value}' WHERE game_stats = 'game_stats'"
     cursor.execute(cmd)
+
+@connect_db
+def get_rotation_difference_value(cursor, table_name):
+    result = []
+    sets = ["1","6","5","4","3","2"]
+    cmd = f"Select rotation1_difference,rotation6_difference,rotation5_difference,rotation4_difference,rotation3_difference,rotation2_difference from {table_name} WHERE game_stats = 'game_stats'"
+    cursor.execute(cmd)
+    rows = cursor.fetchall()
+    print(rows)
+    rows = rows[0]
+    for i in range(0,len(rows)):
+        tmp_list = []
+        tmp_list.append(sets[i])
+        tmp_value = rows[i]
+        print(tmp_value)
+        difference_rotation_points = str(int(tmp_value[0]) - int(tmp_value[2]))
+        tmp_list.append(difference_rotation_points)
+        result.append(tmp_list)
+
+    return result
+
+
+@connect_db
+def get_situations_points_value(cursor, table_name, situation:str):
+    column_name = f"points_{situation}"
+    cmd = f"Select {column_name} from {table_name} WHERE game_stats = 'game_stats'"
+    print(cmd)
+    cursor.execute(cmd)
+    rows = cursor.fetchone()
+    print(rows)
+    value = rows[0].split("/")
+    value[2] = str(int((int(value[2]) / int(value[3]))*100))+"%"
+    result = "/".join(value)
+
+    result_list = [result]
+    result_list = [result_list]
+    print(result_list)
+    return result_list
+
+
 """
 @connect_db
 def get_stat_set(cursor, table_name, stat_value:str :

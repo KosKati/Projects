@@ -24,10 +24,11 @@ class CourtWidgets(QWidget):
         self.libero_settings = None
         self.player_stat_frame = player_stat_frame
         self.left_side = QGroupBox()
+        self.left_side.setStyleSheet("QGroupBox{border-image: url('./Pics/Volleyball_Half_Court.png');background-repeat: no-repeat;margin-top: 250px;}")
         #self.left_side.setStyleSheet("border: 1px solid black;")
         #left_side_layout = QGridLayout()
         self.left_side_layout = QVBoxLayout()
-        self.left_side_layout.setContentsMargins(0, 100, 0, 0)
+        self.left_side_layout.setContentsMargins(0, 30, 0, 0)
 
 
         self.left_layout_front = QHBoxLayout()

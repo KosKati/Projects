@@ -3,13 +3,15 @@ import sys
 
 from PyQt6.QtCore import Qt
 from icecream import ic
+from moviepy import VideoFileClip, concatenate_videoclips, CompositeVideoClip
+from numpy.ma.core import concatenate
 
 import JsonFunctions
 
 import DBFunctions
 from PyQt6.QtWidgets import QApplication, QMainWindow, QMessageBox, QPushButton, QWidget, QLineEdit, QLabel, QHBoxLayout
 from UpdatePlayers import PlayersUpdate
-import MainWindow
+import StatsWindow
 #DBFunctions.create_table("Testgame2")
 #DBFunctions.insert_start_values("Testgame")
 #ps = DBFunctions.select_stat("Testgame", "4", "Points_Data")
@@ -120,13 +122,6 @@ line_up.append(tmp)
 print(line_up)
 """
 
-connection = sqlite3.connect("VolleyScout2.db")
-cursor = connection.cursor()
-#listOfTables = []
-
-listOfTables = cursor.execute("SELECT name FROM sqlite_master WHERE type='table';").fetchall()
-for i in range(0,len(listOfTables)):
-    cursor.execute(f"DROP TABLE {listOfTables[i][0]}")
-connection.close()
+DBFunctions.get_situations_points_value("game_data_ewd1_bs_01", "good_reception")
 
 
