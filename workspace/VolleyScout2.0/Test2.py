@@ -122,6 +122,9 @@ line_up.append(tmp)
 print(line_up)
 """
 
-DBFunctions.get_situations_points_value("game_data_ewd1_bs_01", "good_reception")
+#DBFunctions.get_situations_points_value("game_data_ewd1_bs_01", "good_reception")
+
+DBFunctions.select_report_set_points_data("game_data_ewd1_bs_01")
+
 
 

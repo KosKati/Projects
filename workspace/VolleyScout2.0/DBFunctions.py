@@ -50,7 +50,21 @@ def select_report_set_points_data(cursor, table_name ):
         row = list(row[0])
         result.append(row)
 
+    for i in range(0, len(result)):
+        result_tmp = result[i][3].split("/")
+        result_tmp[2] = result_tmp[2] + "%"
+        result_tmp[3] = "(" + result_tmp[3] + "%)"
+        result[i][3] = "   ".join(result_tmp)
 
+    for i in range(0, len(result)):
+        result_tmp = result[i][4].split("/")
+        print(result_tmp)
+        if not result_tmp[0] == "0":
+            result_tmp[4] = str( int((int(result_tmp[4])/int(result_tmp[0]))*100))
+            result_tmp[4] = "(" + result_tmp[4] + "%)"
+        result[i][4] = "   ".join(result_tmp)
+
+    print(result)
     return result
 
 
